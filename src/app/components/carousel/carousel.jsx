@@ -46,7 +46,7 @@ const Carousel = () => {
   return (
     <div className="relative">
       <div className="embla overflow-hidden relative" ref={emblaRef}>
-        <div className="embla__container flex h-[650px]">
+        <div className="embla__container flex xl:h-[650px]">
           {images.map((image) => {
             return (
               <div

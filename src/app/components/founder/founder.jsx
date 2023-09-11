@@ -6,8 +6,8 @@ import SectionHeading from "../SectionHeading";
 const Founder = () => {
   return (
     <section className="relative px-3 md:px-5 bg-[#f9f9f9]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-32">
-        <div className="flex-1 flex flex-row justify-end gap-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
+        <div className="flex-1 flex flex-row justify-center lg:justify-end gap-6">
           <div className="relative overflow-hidden rounded-lg">
             <img
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
@@ -20,7 +20,9 @@ const Founder = () => {
           <SectionHeading>
             From Humble Beginnings to Transformational, Innovation
           </SectionHeading>
-          <SectionHeading classes="font-bold">- Lead Growth</SectionHeading>
+          <SectionHeading classes="font-bold self-end md:self-start">
+            - Lead Growth
+          </SectionHeading>
 
           <p className="text-body-text">
             A scion of the Kanwar family, the founders of Apollo Tyers, Raaja

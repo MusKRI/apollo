@@ -8,7 +8,7 @@ import SectionButton from "../SectionButton";
 const HomeAboutUs = () => {
   return (
     <section className="relative px-3 md:px-5">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-32">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
         <div className="flex-1 flex flex-row gap-6">
           <div className="relative overflow-hidden rounded-lg -mt-0: md:-mt-10">
             <img
@@ -39,8 +39,7 @@ const HomeAboutUs = () => {
           <p className="text-lg font-medium text-main-text">About us</p>
 
           <SectionHeading>
-            India&apos;s Leading
-            <br />
+            India&apos;s Leading&nbsp; <br className="hidden" />
             GlobalBusiness Conglomerate
           </SectionHeading>
 
