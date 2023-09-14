@@ -5,7 +5,7 @@ import SectionHeading from "../SectionHeading";
 
 const Founder = () => {
   return (
-    <section className="relative px-3 md:px-5 bg-[#f9f9f9]">
+    <section className="relative px-3 md:px-5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
         <div className="flex-1 flex flex-row justify-center lg:justify-end gap-6">
           <div className="relative overflow-hidden rounded-lg">

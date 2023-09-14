@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 // **** Local Imports ****
+import { cn } from "../../lib/utils";
 
 const MotionLink = motion(Link);
 const MotionArrowRight = motion(BsArrowRight);
 
-const SectionButton = ({ slug, children }) => {
+const SectionButton = ({ slug, children, classes = "" }) => {
   const buttonVariants = {
     rest: {
       right: "-2rem",
@@ -29,7 +30,7 @@ const SectionButton = ({ slug, children }) => {
 
   return (
     <MotionLink
-      className="relative flex items-center"
+      className={cn("relative flex items-center", classes)}
       to={slug}
       initial="rest"
       whileHover="whileHover"

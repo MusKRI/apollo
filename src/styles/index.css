@@ -41,3 +41,21 @@ html {
   pointer-events: none;
   margin: auto;
 }
+
+/* .window-mask {
+  mask-image: linear-gradient(black, black);
+  mask-composite: exclude;
+  mask-repeat: no-repeat;
+  mask-size: auto, 300px auto;
+  mask-position: center center, top 146px right 50%;
+} */
+
+/* https://www.w3schools.com/css/w3logo.png */
+
+.gradient {
+  background: linear-gradient(to bottom, #238e34, #23278c);
+}
+
+.btn_gradient {
+  background: linear-gradient(to right, #238e34, #23278c);
+}
