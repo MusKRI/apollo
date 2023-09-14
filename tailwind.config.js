@@ -8,6 +8,9 @@ export default {
         "main-text": "var(--text-main-color)",
         "body-text": "var(--text-body-color)",
       },
+      gridTemplateColumns: {
+        flexible: "repeat(auto-fill, minmax(250px, 1fr))",
+      },
     },
   },
   plugins: [],

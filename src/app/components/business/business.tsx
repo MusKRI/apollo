@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 
 const cardVariants = {
   hidden: {
-    background: "transparent",
+    background: "linear-gradient(to bottom, transparent, transparent)",
   },
   hover: {
     background: "linear-gradient(to bottom, #238e34, #23278c)",
@@ -36,7 +36,7 @@ const Business = () => {
 
   return (
     <section className="relative px-3 md:px-5 bg-[#f9f9f9]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32 gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row py-16 md:py-32 gap-10">
         <div className="flex flex-col px-6 gap-6 order-1 lg:order-0">
           <SectionHeading>
             Make your business <br />
@@ -54,10 +54,10 @@ const Business = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col items-center lg:items-stretch lg:flex-row lg:flex-wrap gap-4 order-0 lg:order-1">
+        <div className="flex-1 flex flex-row items-center justify-center lg:justify-stretch flex-wrap gap-4 order-0 lg:order-1">
           {/* Card 1 */}
           <div
-            className="relative overflow-hidden rounded-lg w-72 h-[380px] lg:w-96 lg:h-[500px] lg:-mt-[50px]"
+            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px] xl:-mt-[50px]"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
@@ -100,7 +100,7 @@ const Business = () => {
           </div>
 
           <div
-            className="relative overflow-hidden rounded-lg w-72 h-[380px] lg:w-96 lg:h-[500px]"
+            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px]"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
@@ -143,7 +143,7 @@ const Business = () => {
           </div>
 
           <div
-            className="relative overflow-hidden rounded-lg w-72 h-[380px] lg:w-96 lg:h-[500px] lg:-mt-[50px]"
+            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px] xl:-mt-[50px]"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
@@ -186,7 +186,7 @@ const Business = () => {
           </div>
 
           <div
-            className="relative overflow-hidden rounded-lg w-72 h-[380px] lg:w-96 lg:h-[500px]"
+            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px]"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
