@@ -1,5 +1,6 @@
 // **** Library Imports ****
 import { BsSearch } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 // **** Local Imports ****
 import LinkWithoutChildren from "./components/LinkWithoutChildren";
@@ -118,8 +119,17 @@ const Header = () => {
         </nav>
 
         {/* Search */}
-        <div className="border h-full flex items-center px-4 cursor-pointer">
+        <div className="h-full flex items-center gap-4">
           <BsSearch className="w-5 h-5" />
+
+          <motion.button
+            whileTap={{
+              scale: 0.96,
+            }}
+            className="px-4 py-1 bg-[#2e3192] rounded-sm text-white"
+          >
+            Enquire now
+          </motion.button>
         </div>
       </div>
     </header>

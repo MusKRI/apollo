@@ -1,9 +1,38 @@
 // **** Library Imports ****
 import * as Tabs from "@radix-ui/react-tabs";
+import { motion } from "framer-motion";
 
 // **** Local Imports ****
-import SectionHeading from "../SectionHeading";
+// import SectionHeading from "../SectionHeading";
 import SectionButton from "../SectionButton";
+
+const imageVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.5,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: {
+    opacity: 0,
+    x: 30,
+  },
+  whileInView: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 const HomeAboutUs = () => {
   return (
@@ -11,7 +40,10 @@ const HomeAboutUs = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
         <div className="flex-1 flex flex-row gap-6">
           <div className="relative overflow-hidden rounded-lg -mt-0: md:-mt-10">
-            <img
+            <motion.img
+              variants={imageVariants}
+              initial="hidden"
+              whileInView="whileInView"
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
               alt="about-img1"
               className="w-96 object-cover rounded-lg"
@@ -19,7 +51,10 @@ const HomeAboutUs = () => {
           </div>
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-lg w-full">
-              <img
+              <motion.img
+                variants={imageVariants}
+                initial="hidden"
+                whileInView="whileInView"
                 src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80"
                 alt="about-img2"
                 className="w-64 object-cover rounded-lg"
@@ -27,7 +62,10 @@ const HomeAboutUs = () => {
             </div>
 
             <div className="relative overflow-hidden rounded-lg w-full">
-              <img
+              <motion.img
+                variants={imageVariants}
+                initial="hidden"
+                whileInView="whileInView"
                 src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80"
                 alt="about-img3"
                 className="w-[248px] object-cover rounded-lg"
@@ -35,28 +73,40 @@ const HomeAboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 px-6 flex flex-col gap-3">
-          <p className="text-lg font-medium text-main-text">About us</p>
+        <motion.div
+          initial="hidden"
+          whileInView="whileInView"
+          className="flex-1 px-6 flex flex-col gap-3"
+        >
+          <motion.p
+            variants={textVariants}
+            className="text-lg font-medium text-main-text"
+          >
+            About us
+          </motion.p>
 
-          <SectionHeading>
+          <motion.h1
+            variants={textVariants}
+            className="text-[28px] md:text-5xl font-medium text-main-text"
+          >
             India&apos;s Leading&nbsp; <br className="hidden" />
             GlobalBusiness Conglomerate
-          </SectionHeading>
+          </motion.h1>
 
-          <p className="text-body-text">
+          <motion.p variants={textVariants} className="text-body-text">
             To deliver superior value to our customers, shareholders, employees,
             and community through a diversified global of emergent businesses
             that are driven by limitless innovation, collective wisdom, and
             ingenious models.
-          </p>
+          </motion.p>
 
-          <p className="text-body-text">
+          <motion.p variants={textVariants} className="text-body-text">
             Our values continue to direct the growth of businesses under Apollo
             International
-          </p>
+          </motion.p>
 
           {/* Tabs Content */}
-          <div className="mb-5">
+          <motion.div variants={textVariants} className="mb-5">
             <Tabs.Root className="flex flex-col" defaultValue="tab1">
               <Tabs.List
                 className="shrink-0 flex border-b mb-5"
@@ -78,29 +128,52 @@ const HomeAboutUs = () => {
               </Tabs.List>
 
               <Tabs.Content className="grow bg-white outline-none" value="tab1">
-                <p className="text-body-text">
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  className="text-body-text"
+                >
                   1 To deliver superior value to our customers, shareholders,
                   employees, and community through a diversified global of
                   emergent businesses that are driven by limitless innovation,
                   collective wisdom, and ingenious models.
-                </p>
+                </motion.p>
               </Tabs.Content>
 
               <Tabs.Content className="grow bg-white outline-none" value="tab2">
-                <p className="text-body-text">
+                <motion.p
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  className="text-body-text"
+                >
                   2 To deliver superior value to our customers, shareholders,
                   employees, and community through a diversified global of
                   emergent businesses that are driven by limitless innovation,
                   collective wisdom, and ingenious models.
-                </p>
+                </motion.p>
               </Tabs.Content>
             </Tabs.Root>
-          </div>
+          </motion.div>
 
-          <div className="flex items-center justify-start">
+          <motion.div
+            variants={textVariants}
+            className="flex items-center justify-start"
+          >
             <SectionButton slug="/purpose-values">Read more</SectionButton>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
