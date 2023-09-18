@@ -106,3 +106,26 @@ html {
     var(--brand-secondary)
   );
 }
+
+/* ******************** */
+
+.clipGradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(219, 237, 228, 1) 92%,
+    rgba(219, 237, 228, 1) 100%
+  );
+}
+
+.mask {
+  -webkit-mask-image: url("/mask.svg");
+  mask-image: url("/mask.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  z-index: 4;
+  position: relative;
+}

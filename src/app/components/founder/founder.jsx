@@ -6,13 +6,14 @@ import SectionHeading from "../SectionHeading";
 const Founder = () => {
   return (
     <section className="relative px-3 md:px-5">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
-        <div className="flex-1 flex flex-row justify-center lg:justify-end gap-6">
+      <div className="absolute inset-0 z-[-2] clipGradient"></div>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between py-16 md:py-32 relative">
+        <div className="flex-1 flex flex-row justify-center">
           <div className="relative overflow-hidden rounded-lg">
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+              src="/b1.png"
               alt="about-img1"
-              className="w-[400px] object-cover rounded-lg"
+              className="w-[540px] object-cover rounded-lg"
             />
           </div>
         </div>
