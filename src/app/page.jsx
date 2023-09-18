@@ -29,7 +29,7 @@ const Home = () => {
 
   const maskSize = useTransform(scrollYSpring, [0, 1], [510.84, 5000]);
 
-  const scale = useTransform(scrollYSpring, [0, 1], [0.5, 2]);
+  const scale = useTransform(scrollYSpring, [0, 1], [0.5, 1.25]);
 
   const wms = useMotionTemplate`${maskSize}px`;
 
