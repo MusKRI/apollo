@@ -11,6 +11,10 @@ export default {
       gridTemplateColumns: {
         flexible: "repeat(auto-fill, minmax(250px, 1fr))",
       },
+
+      screens: {
+        "2lg": "1228px",
+      },
     },
   },
   plugins: [],

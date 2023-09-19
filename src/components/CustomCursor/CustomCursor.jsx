@@ -41,17 +41,17 @@ const CustomCursor = ({ children }) => {
         mass: 0.6,
       },
     },
-    // project: {
-    //   opacity: 1,
-    //   // backgroundColor: "rgba(255, 255, 255, 0.6)",
-    //   backgroundColor: "#fff",
-    //   color: "#000",
-    //   height: 80,
-    //   width: 80,
-    //   fontSize: "18px",
-    //   x: mouseXPosition - 32,
-    //   y: mouseYPosition - 32,
-    // },
+    pp: {
+      opacity: 1,
+      // backgroundColor: "rgba(255, 255, 255, 0.6)",
+      backgroundColor: "#fff",
+      color: "#000",
+      height: 80,
+      width: 80,
+      fontSize: "18px",
+      x: mouseXPosition - 32,
+      y: mouseYPosition - 32,
+    },
     // contact: {
     //   opacity: 1,
     //   backgroundColor: "#FFBCBC",
@@ -74,7 +74,7 @@ const CustomCursor = ({ children }) => {
     <main ref={ref}>
       <motion.div
         variants={variants}
-        className="circle hidden md:!flex"
+        className="circle static md:fixed md:!flex"
         animate={cursorVariant}
         transition={spring}
       >

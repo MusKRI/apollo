@@ -6,13 +6,15 @@ import {
   useMotionTemplate,
   useSpring,
 } from "framer-motion";
+import { useRef } from "react";
 
 // **** Local Imports ****
+
 import Carousel from "./components/carousel/carousel";
 import HomeAboutUs from "./components/about-us/about-us";
 import Founder from "./components/founder/founder";
 import Business from "./components/business/business";
-import { useRef } from "react";
+import PeoplePlanet from "./components/people-planet/people-planet";
 
 const Home = () => {
   const ref = useRef();
@@ -38,6 +40,9 @@ const Home = () => {
       {/* Carousel */}
       <Carousel />
 
+      {/* About us Section */}
+      <HomeAboutUs />
+
       <div className="h-[250vh] relative z-[2]" ref={ref}>
         <div className="sticky h-screen top-0">
           <motion.div
@@ -59,14 +64,14 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About us Section */}
-      <HomeAboutUs />
-
       {/* Business Section */}
       <Business />
 
       {/* Founder Section */}
       <Founder />
+
+      {/* People Planet */}
+      <PeoplePlanet />
     </>
   );
 };

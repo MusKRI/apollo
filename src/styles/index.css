@@ -24,7 +24,6 @@ html {
 }
 
 .circle {
-  position: fixed;
   z-index: 100;
   flex-flow: row;
   align-content: center;
