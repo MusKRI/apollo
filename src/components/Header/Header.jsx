@@ -18,21 +18,21 @@ const navLinks = [
     label: "About Us",
     children: [
       {
-        id: "who-we-are",
+        id: "aboutus",
         label: "Who We Are",
-        slug: "/who-we-are",
+        slug: "/aboutus",
       },
 
       {
-        id: "purpose-values",
+        id: "aboutus",
         label: "Purpose & Values",
-        slug: "/purpose-values",
+        slug: "/aboutus",
       },
 
       {
-        id: "leadership",
+        id: "aboutus",
         label: "Leadership",
-        slug: "/leadership",
+        slug: "/aboutus",
       },
     ],
   },
