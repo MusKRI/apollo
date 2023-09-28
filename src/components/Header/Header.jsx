@@ -44,25 +44,25 @@ const navLinks = [
       {
         id: "projects",
         label: "Projects",
-        slug: "/projects",
+        slug: "/business",
       },
 
       {
         id: "apparel-footwear",
         label: "Apparel & Footwear",
-        slug: "/apparel-footwear",
+        slug: "/business",
       },
 
       {
         id: "automotive-components",
         label: "Automotive Components",
-        slug: "/automotive-components",
+        slug: "/business",
       },
 
       {
         id: "logistics-supply-chain",
         label: "Logistics & Supply Chain",
-        slug: "/logistics-supply-chain",
+        slug: "/business",
       },
     ],
   },

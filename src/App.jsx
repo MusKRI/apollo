@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import RootLayout from "./app/layout";
 import Home from "./app/page";
 import AboutUs from "./app/about-us/page";
+import Business from "./app/business/page";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/business" element={<Business />} />
       </Routes>
     </RootLayout>
   );

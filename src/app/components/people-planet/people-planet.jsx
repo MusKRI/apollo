@@ -69,6 +69,9 @@ const PeoplePlanet = () => {
               y: 20,
               opacity: 0,
             }}
+            viewport={{
+              once: true,
+            }}
             whileInView={{
               y: 0,
               opacity: 1,
@@ -83,6 +86,9 @@ const PeoplePlanet = () => {
             initial={{
               y: 20,
               opacity: 0,
+            }}
+            viewport={{
+              once: true,
             }}
             whileInView={{
               y: 0,
@@ -110,6 +116,9 @@ const PeoplePlanet = () => {
                       width: 0,
                       opacity: 0,
                     }}
+                    viewport={{
+                      once: true,
+                    }}
                     whileInView={{
                       width: 293,
                       opacity: 1,
@@ -127,6 +136,9 @@ const PeoplePlanet = () => {
                       initial={{
                         scale: 0,
                         opacity: 0,
+                      }}
+                      viewport={{
+                        once: true,
                       }}
                       whileInView={{
                         scale: 1,

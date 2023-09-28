@@ -48,6 +48,9 @@ const WhoWeAre = () => {
             y: 60,
             opacity: 0,
           }}
+          viewport={{
+            once: true,
+          }}
           whileInView={{
             y: 0,
             opacity: 1,
@@ -67,6 +70,9 @@ const WhoWeAre = () => {
                 initial={{
                   y: 60,
                   opacity: 0,
+                }}
+                viewport={{
+                  once: true,
                 }}
                 whileInView={{
                   y: 0,
@@ -91,6 +97,9 @@ const WhoWeAre = () => {
                         delay: 0.8,
                       },
                     }}
+                    viewport={{
+                      once: true,
+                    }}
                     src={imgNode.img}
                     alt="IMG1"
                     className="rounded-lg -mt-12 w-60 h-48"
@@ -114,12 +123,15 @@ const WhoWeAre = () => {
                     y: 100,
                     opacity: 0,
                   }}
+                  viewport={{
+                    once: true,
+                  }}
                   whileInView={{
                     y: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.8
-                    }
+                      duration: 0.8,
+                    },
                   }}
                   className="text-lg text-[#525252] text-center overflow-hidden"
                 >
