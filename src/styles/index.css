@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .sc-carousel-container {
+    @apply relative h-40 w-[420px] sm:h-56 md:h-[440px];
+    perspective: 450px;
+    transform-style: preserve-3d;
+  }
+
+  .sc-carousel-item {
+    @apply absolute h-full w-full cursor-pointer overflow-hidden rounded-3xl drop-shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-700 ease-in-out;
+  }
+}
+
 .loader {
   position: relative;
 }

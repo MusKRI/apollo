@@ -6,6 +6,7 @@ import RootLayout from "./app/layout";
 import Home from "./app/page";
 import AboutUs from "./app/about-us/page";
 import Business from "./app/business/page";
+import SupplyChain from "./app/supply-chain/page";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/supply-chain" element={<SupplyChain />} />
       </Routes>
     </RootLayout>
   );

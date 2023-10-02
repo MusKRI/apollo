@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 // **** Local Imports ****
 import LinkWithoutChildren from "./components/LinkWithoutChildren";
 import LinkWithChildren from "./components/LinkWithChildren";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   {
     id: "home",
     label: "Home",
-    children: [],
+    children: null,
   },
 
   {
@@ -93,9 +94,9 @@ const Header = () => {
     <header className="relative bg-white h-[72px] px-3 md:px-5">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="">
+        <Link to="/" className="">
           <h1 className="text-4xl font-bold text-main-text">Apollo</h1>
-        </div>
+        </Link>
 
         {/* nav */}
         <nav className="h-full">
