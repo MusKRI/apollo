@@ -75,7 +75,7 @@ const ScIdentity = () => {
                 initial="rest"
                 whileHover="whileHover"
               >
-                <span className="text-main-text font-medium text-lg text-[#f7931e]">
+                <span className="font-medium text-lg text-[#f7931e]">
                   Read more
                 </span>
                 <motion.div

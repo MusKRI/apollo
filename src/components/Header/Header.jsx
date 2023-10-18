@@ -63,7 +63,7 @@ const navLinks = [
       {
         id: "logistics-supply-chain",
         label: "Logistics & Supply Chain",
-        slug: "/business",
+        slug: "/supply-chain",
       },
     ],
   },
