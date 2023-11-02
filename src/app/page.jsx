@@ -1,12 +1,4 @@
 // **** Library Imports ****
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionTemplate,
-  useSpring,
-} from "framer-motion";
-import { useRef } from "react";
 
 // **** Local Imports ****
 
@@ -17,23 +9,23 @@ import Business from "./components/business/business";
 import PeoplePlanet from "./components/people-planet/people-planet";
 
 const Home = () => {
-  const ref = useRef();
+  // const ref = useRef();
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0.4 center", "end end"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ["0.4 center", "end end"],
+  // });
 
-  const scrollYSpring = useSpring(scrollYProgress, {
-    damping: 80,
-    stiffness: 600,
-  });
+  // const scrollYSpring = useSpring(scrollYProgress, {
+  //   damping: 80,
+  //   stiffness: 600,
+  // });
 
-  const maskSize = useTransform(scrollYSpring, [0, 1], [510.84, 5000]);
+  // const maskSize = useTransform(scrollYSpring, [0, 1], [510.84, 5000]);
 
-  const scale = useTransform(scrollYSpring, [0, 1], [0.5, 1.25]);
+  // const scale = useTransform(scrollYSpring, [0, 1], [0.5, 1.25]);
 
-  const wms = useMotionTemplate`${maskSize}px`;
+  // const wms = useMotionTemplate`${maskSize}px`;
 
   return (
     <>
@@ -43,7 +35,7 @@ const Home = () => {
       {/* About us Section */}
       <HomeAboutUs />
 
-      <div className="h-[250vh] relative z-[2]" ref={ref}>
+      {/* <div className="h-[250vh] relative z-[2]" ref={ref}>
         <div className="sticky h-screen top-0">
           <motion.div
             style={{
@@ -62,7 +54,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </div> */}
 
       {/* Business Section */}
       <Business />
