@@ -9,57 +9,58 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { DotButton } from "./EmblaCarouselArrowsDotsButtons";
 
+import FashionImg from "./images/fashion.png";
+import GreenEnergyImg from "./images/green-energy.png";
+import SupplyChainImg from "./images/supply-chin.png";
+
 import { cn } from "../../../lib/utils";
 
 const images = [
   {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+    backgroundImage: FashionImg,
     overlayTag: "Fashion Company",
     overlayTitle: "Most Critical Business Priority",
     overlaytDescription:
       "We are providing loream services in this sector to wide area of world",
   },
   {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+    backgroundImage: GreenEnergyImg,
     overlayTag: "Green Energy",
     overlayTitle: "Most Critical Business Priority",
     overlaytDescription:
       "We are providing loream services in this sector to wide area of world",
   },
   {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+    backgroundImage: SupplyChainImg,
     overlayTag: "Supply Chain",
     overlayTitle: "Most Critical Business Priority",
     overlaytDescription:
       "We are providing loream services in this sector to wide area of world",
   },
-  {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    overlayTag: "Supply Chain",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
-  {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    overlayTag: "Supply Chain",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
-  {
-    backgroundImage:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    overlayTag: "Supply Chain",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
+  // {
+  //   backgroundImage:
+  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+  //   overlayTag: "Supply Chain",
+  //   overlayTitle: "Most Critical Business Priority",
+  //   overlaytDescription:
+  //     "We are providing loream services in this sector to wide area of world",
+  // },
+  // {
+  //   backgroundImage:
+  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+  //   overlayTag: "Supply Chain",
+  //   overlayTitle: "Most Critical Business Priority",
+  //   overlaytDescription:
+  //     "We are providing loream services in this sector to wide area of world",
+  // },
+  // {
+  //   backgroundImage:
+  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+  //   overlayTag: "Supply Chain",
+  //   overlayTitle: "Most Critical Business Priority",
+  //   overlaytDescription:
+  //     "We are providing loream services in this sector to wide area of world",
+  // },
 ];
 
 const cardVariants = {
@@ -85,11 +86,11 @@ const cardLinkVariants = {
   },
 };
 
-const Business = () => {
+const Business = ({ mainData, slides }) => {
   const MotionLink = motion(Link);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center"
+    align: "center",
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
@@ -122,54 +123,46 @@ const Business = () => {
       <div className="max-w-7xl mx-auto flex flex-col py-16 md:py-32 gap-10">
         <div className="flex flex-col gap-4 items-center">
           <SectionHeading classes="font-bold text-center">
-            Make your business visible online.
+            {mainData.mainHeading}
           </SectionHeading>
 
-          <p className="text-body-text text-center">
-            Open an online store and become an international seller. Your
-            customers will enjoy shopping online!
-          </p>
+          <p className="text-body-text text-center">{mainData.subHeading}</p>
         </div>
 
         <div className="px-6 relative">
           <div className="embla">
             <div className="embla__viewport overflow-hidden" ref={emblaRef}>
               <div className="embla__container flex touch-pan-y">
-                {images.map((image, index) => (
+                {slides.map((slide, index) => (
                   <div
                     className={cn(
-                      "border embla__slide flex-[0_0_100%] sm:flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_33%] min-w-0 relative mx-2 flex justify-center transition-transform",
+                      "embla__slide flex-[0_0_100%] sm:flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_33%] min-w-0 relative mx-2 flex justify-center transition-transform",
                       index === selectedIndex ? "lg:scale-100" : "lg:scale-90"
                     )}
                     key={index}
                   >
-                    <div
-                      className="relative overflow-hidden rounded-lg w-full h-[460px] md:h-[500px] lg:h-[600px]"
-                      style={{
-                        backgroundImage:
-                          "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                      }}
-                    >
+                    <div className="relative overflow-hidden rounded-lg w-full h-[460px] md:h-[500px] lg:h-[600px]">
+                      <div className="h-full relative z-0 max-w-full">
+                        <img
+                          src={slide.backgroundImage}
+                          className="max-w-full h-full"
+                        />
+                      </div>
                       <motion.div
-                        variants={cardVariants}
+                        // variants={cardVariants}
                         initial="hidden"
                         whileHover="hover"
                         className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
                       >
                         <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                          Business
+                          {slide.cardTag}
                         </div>
 
                         <div className="text-white px-6 py-4 flex flex-col gap-3">
                           <h1 className="text-4xl font-semibold transition">
-                            Most Critical Business Priority
+                            {slide.cardHeading}
                           </h1>
-                          <p className="transition">
-                            We are providing loream services in this sector to
-                            wide area of world
-                          </p>
+                          <p className="transition">{slide.cardContent}</p>
 
                           <MotionLink
                             variants={cardLinkVariants}
