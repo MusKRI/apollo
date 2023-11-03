@@ -10,15 +10,8 @@ const images = [
   {
     src: "https://images.unsplash.com/photo-1598704710590-dbb8d9815b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
     alt: "Image 1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1598704710590-dbb8d9815b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    alt: "Image 2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1598704710590-dbb8d9815b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80",
-    alt: "Image 3",
-  },
+  }
+  
 ];
 
 const Carousel = () => {
@@ -81,14 +74,7 @@ const Carousel = () => {
                 }}
               >
                 <div className="flex flex-col">
-                  <span
-                    className={cn(
-                      "text-white",
-                      isActive ? "text-white" : "text-slate-300"
-                    )}
-                  >
-                    0{index + 1}
-                  </span>
+                   
                   <div
                     className={cn(
                       "h-[2px] w-20",

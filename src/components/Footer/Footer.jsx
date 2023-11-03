@@ -22,10 +22,11 @@ const Variants = {
     },
   },
 };
+let background= {background:"linear-gradient(to right, #238e34, #23278c)"}
 
 const Footer = () => {
   return (
-    <footer className="bg-black">
+    <footer className=" " style={background}>
       <motion.div
         initial="hidden"
         whileInView="whileInView"

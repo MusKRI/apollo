@@ -12,6 +12,8 @@ import PeoplePlanet from "./components/people-planet/people-planet";
 import BusinessGreenEnerygImg from "./components/business/images/green-energy.png";
 import BusinessSupplyChainImg from "./components/business/images/supply-chin.png";
 import BusinessFashionImg from "./components/business/images/fashion.png";
+import ContactMap from "./contact-us/components/map/map";
+import NewSection from "./components/new/new";
 
 const Home = () => {
   // const ref = useRef();
@@ -47,8 +49,8 @@ const Home = () => {
     "AboutSubHeading-2-Description":
       "Our values continue to direct the growth of businesses under Apollo Green Energy. We are driven by five core values guided by one purpose.",
     AboutReadMoreLink: "",
-    BusinessMainHeading: "Making Impact Across Globe",
-    BusinessSubHeading: "One Group. Diversified Business Interests",
+    BusinessMainHeading: "One Group. Diversified Business Interests",
+    BusinessSubHeading: "",
     BusinessBusinessSlide1: BusinessGreenEnerygImg,
     BusinessCardName1: "Business",
     BusinessCardHeading1: "Apollo Green Energy",
@@ -67,15 +69,17 @@ const Home = () => {
     BusinessSlideContent3:
       "Apollo Fashion is a prominent manufacturer for leading international fashion brands.s",
     BusinessKnowMore3: "",
-    BusinessSlide4: "",
-    BusinessSlideContent4: "",
-    BusinessCardName4: "",
-    BusinessCardHeading4: "",
+    BusinessSlide4: BusinessGreenEnerygImg,
+    BusinessSlideContent4:
+      "Apollo Pro X essentially serves as an all-encompassing EPC (Engineering, Procurement, and Construction) solution, executing large industrial and infrastructure projects",
+    BusinessCardName4: "Business",
+    BusinessCardHeading4: ".Apollo Pro X",
     BusinessKnowMore4: "",
-    BusinessSlide5: "",
-    BusinessSlideContent5: "",
-    BusinessCardName5: "",
-    BusinessCardHeading5: "",
+    BusinessSlide5: BusinessGreenEnerygImg,
+    BusinessSlideContent5:
+      "Apollo Marketplace is a trading and distribution company with a global network that can benefit your business.",
+    BusinessCardName5: "Business",
+    BusinessCardHeading5: "Apollo Marketplace",
     BusinessKnowMore5: "",
     HumbleSection: "From Humble Beginnings to Transformational, Innovation",
     HumbleSubSection:
@@ -89,7 +93,6 @@ const Home = () => {
     <>
       {/* Carousel */}
       <Carousel />
-
       {/* About us Section */}
       <HomeAboutUs
         data={{
@@ -103,7 +106,6 @@ const Home = () => {
             wholeData["AboutSubHeading-2-Description"],
         }}
       />
-
       {/* <div className="h-[250vh] relative z-[2]" ref={ref}>
         <div className="sticky h-screen top-0">
           <motion.div
@@ -124,7 +126,6 @@ const Home = () => {
           </motion.div>
         </div>
       </div> */}
-
       {/* Business Section */}
       <Business
         slides={[
@@ -146,13 +147,24 @@ const Home = () => {
             cardHeading: wholeData.BusinessCardHeading3,
             cardContent: wholeData.BusinessSlideContent3,
           },
+          {
+            backgroundImage: wholeData.BusinessSlide4,
+            cardTag: wholeData.BusinessCardName4,
+            cardHeading: wholeData.BusinessCardHeading4,
+            cardContent: wholeData.BusinessSlideContent4,
+          },
+          {
+            backgroundImage: wholeData.BusinessSlide5,
+            cardTag: wholeData.BusinessCardName5,
+            cardHeading: wholeData.BusinessCardHeading5,
+            cardContent: wholeData.BusinessSlideContent5,
+          },
         ]}
         mainData={{
           mainHeading: wholeData.BusinessMainHeading,
           subHeading: wholeData.BusinessSubHeading,
         }}
       />
-
       {/* Founder Section */}
       <Founder
         data={{
@@ -161,9 +173,33 @@ const Home = () => {
           humbleFinalSection: wholeData.HumbleFinalSection,
         }}
       />
+      {/* //map Section */}
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-6 text-[28px] md:text-5xl text-main-text font-bold">
+            Making Impact Across Globe
+          </div>
+          {/* <div className="col-12"><ContactMap/></div> */}
+          <div className="container-fluid mt-5">
+            <div className="row">
+              <div className="col-12">
+                <ContactMap />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* People Planet */}
-      <PeoplePlanet />
+      {/* <PeoplePlanet /> */}
+
+      <NewSection
+        data={{
+          humbleSection: wholeData.HumbleSection,
+          humbleSubSection: wholeData.HumbleSubSection,
+          humbleFinalSection: wholeData.HumbleFinalSection,
+        }}
+      />
     </>
   );
 };

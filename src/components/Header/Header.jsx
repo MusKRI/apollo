@@ -1,17 +1,20 @@
 // **** Library Imports ****
 import { BsSearch } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // **** Local Imports ****
 import LinkWithoutChildren from "./components/LinkWithoutChildren";
 import LinkWithChildren from "./components/LinkWithChildren";
-import { Link } from "react-router-dom";
+
+import Logo from "./images/logo.png";
 
 const navLinks = [
   {
     id: "home",
     label: "Home",
     children: null,
+    slug: "/",
   },
 
   {
@@ -95,7 +98,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo */}
         <Link to="/" className="">
-          <h1 className="text-4xl font-bold text-main-text">Apollo</h1>
+          <div className="relative">
+            <img src={Logo} alt="Logo" />
+          </div>
         </Link>
 
         {/* nav */}
