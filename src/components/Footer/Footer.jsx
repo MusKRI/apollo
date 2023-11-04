@@ -223,27 +223,7 @@ const Footer = () => {
               </button>
             </motion.div>
 
-            <motion.div
-              variants={Variants}
-              className="flex flex-row gap-4 items-center mt:10"
-            >
-              <h4 className="text-white">Connect with Us!</h4>
-
-              <div className="flex flex-row items-center gap-2">
-                <Link to="#" className="p-2 shadow-sm rounded-md bg-white">
-                  <BiLogoFacebook className="w-4 h-4 text-main-text" />
-                </Link>
-                <Link to="#" className="p-2 shadow-sm rounded-md bg-white">
-                  <AiOutlineTwitter className="w-4 h-4 text-main-text" />
-                </Link>
-                <Link to="#" className="p-2 shadow-sm rounded-md bg-white">
-                  <AiOutlineInstagram className="w-4 h-4 text-main-text" />
-                </Link>
-                <Link to="#" className="p-2 shadow-sm rounded-md bg-white">
-                  <TfiYoutube className="w-4 h-4 text-main-text" />
-                </Link>
-              </div>
-            </motion.div>
+           
           </div>
         </div>
       </motion.div>

@@ -1,6 +1,7 @@
 import SectionHeading from "../SectionHeading";
 
-import BrightImg from "./images/bright.jpeg";
+// import BrightImg from "./images/bright.jpeg";
+import Bright2Img from "./images/bright2.jpeg";
 
 const NewSection = ({ data }) => {
   return (
@@ -10,7 +11,7 @@ const NewSection = ({ data }) => {
         <div className="flex-1 flex flex-row justify-center order-[0] md:order-1">
           <div className="relative overflow-hidden rounded-lg">
             <img
-              src={BrightImg}
+              src={Bright2Img}
               alt="about-img1"
               className="w-[400px] md:w-[540px] object-cover rounded-lg"
             />
@@ -19,9 +20,7 @@ const NewSection = ({ data }) => {
 
         <div className="flex-1 px-6 flex flex-col gap-3 order-1 md:order-[0] self-center">
           <SectionHeading>{data.humbleSection}</SectionHeading>
-          <SectionHeading classes="font-bold self-end md:self-start">
-            - Lead Growth
-          </SectionHeading>
+          <SectionHeading classes="font-bold self-end md:self-start"></SectionHeading>
 
           {/* <p className="text-body-text">{data.humbleSubSection}</p> */}
 

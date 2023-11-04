@@ -11,13 +11,11 @@ const Founder = ({ data }) => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between py-16 md:py-32 relative">
         <div className="flex-1 px-6 flex flex-col gap-3 order-1 md:order-[0] self-center">
           <SectionHeading>{data.humbleSection}</SectionHeading>
-          <SectionHeading classes="font-bold self-end md:self-start">
-            - Lead Growth
-          </SectionHeading>
+          <SectionHeading classes="font-bold self-end md:self-start"></SectionHeading>
 
           {/* <p className="text-body-text">{data.humbleSubSection}</p> */}
 
-          <h4 className="italic text-xl">
+          <h4 className="italic text-xl whitespace-pre-line">
             &quot;{data.humbleFinalSection}&quot;
           </h4>
         </div>

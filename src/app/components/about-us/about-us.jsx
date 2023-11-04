@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 
 // **** Local Imports ****
 // import SectionHeading from "../SectionHeading";
-import GirlImg from "./images/girl-img.png";
-import HelpImg from "./images/help-img-1.png";
-import GirlImg2 from "./images/girl-img-3.png";
+
+import Img1 from "./images/1.jpeg";
+import Img2 from "./images/2.jpeg";
+import Img3 from "./images/3.jpeg";
 
 import SectionButton from "../SectionButton";
 
@@ -48,7 +49,7 @@ const HomeAboutUs = ({ data }) => {
               variants={imageVariants}
               initial="hidden"
               whileInView="whileInView"
-              src={GirlImg}
+              src={Img1}
               alt="about-img1"
               className="w-96 object-cover rounded-lg"
             />
@@ -59,7 +60,7 @@ const HomeAboutUs = ({ data }) => {
                 variants={imageVariants}
                 initial="hidden"
                 whileInView="whileInView"
-                src={HelpImg}
+                src={Img2}
                 alt="about-img2"
                 className="w-64 object-cover rounded-lg"
               />
@@ -70,7 +71,7 @@ const HomeAboutUs = ({ data }) => {
                 variants={imageVariants}
                 initial="hidden"
                 whileInView="whileInView"
-                src={GirlImg2}
+                src={Img3}
                 alt="about-img3"
                 className="w-[248px] object-cover rounded-lg"
               />

@@ -6,14 +6,17 @@ import Carousel from "./components/carousel/carousel";
 import HomeAboutUs from "./components/about-us/about-us";
 import Founder from "./components/founder/founder";
 import Business from "./components/business/business";
-import PeoplePlanet from "./components/people-planet/people-planet";
+// import PeoplePlanet from "./components/people-planet/people-planet";
 
 // images
 import BusinessGreenEnerygImg from "./components/business/images/green-energy.png";
-import BusinessSupplyChainImg from "./components/business/images/supply-chin.png";
-import BusinessFashionImg from "./components/business/images/fashion.png";
-import ContactMap from "./contact-us/components/map/map";
+import BusinessSupplyChainImg from "./components/business/images/supply chain.jpeg";
+import BusinessFashionImg from "./components/business/images/Fashion.jpeg";
+import BusinessXImg from "./components/business/images/ProX.jpeg";
+
+// import ContactMap from "./contact-us/components/map/map";
 import NewSection from "./components/new/new";
+import Map from "./map";
 
 const Home = () => {
   // const ref = useRef();
@@ -69,23 +72,23 @@ const Home = () => {
     BusinessSlideContent3:
       "Apollo Fashion is a prominent manufacturer for leading international fashion brands.s",
     BusinessKnowMore3: "",
-    BusinessSlide4: BusinessGreenEnerygImg,
+    BusinessSlide4: BusinessXImg,
     BusinessSlideContent4:
       "Apollo Pro X essentially serves as an all-encompassing EPC (Engineering, Procurement, and Construction) solution, executing large industrial and infrastructure projects",
     BusinessCardName4: "Business",
     BusinessCardHeading4: ".Apollo Pro X",
     BusinessKnowMore4: "",
-    BusinessSlide5: BusinessGreenEnerygImg,
+    BusinessSlide5: BusinessXImg,
     BusinessSlideContent5:
       "Apollo Marketplace is a trading and distribution company with a global network that can benefit your business.",
     BusinessCardName5: "Business",
     BusinessCardHeading5: "Apollo Marketplace",
     BusinessKnowMore5: "",
-    HumbleSection: "From Humble Beginnings to Transformational, Innovation",
+    HumbleSection: "",
     HumbleSubSection:
       "A scion of the Kanwar family, the founders of Apollo Tyers, Raaja kanwar chose to carve a path following his passion for start-ups using disruptive technology. As a passionate investor, Raaja takes a keen interest in entrepreneurial visions that hold a promise to make the world a better place for the next generations. Under his tutelage, using smart technology, innovative practices executed by best-in-class talent in the country, Apollo International Limited is delivering high quality, bespoke products and solutions across sectors.",
     HumbleFinalSection:
-      "We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet.",
+      "We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet.\n\nMr. Raaja Kanwar, Chairman & Managing Director, Apollo Green Energy",
     HumbleLogo: "",
   };
 
@@ -176,14 +179,14 @@ const Home = () => {
       {/* //map Section */}
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-6 text-[28px] md:text-5xl text-main-text font-bold">
+          <div className="col-12 d-flex justify-content-center text-[28px] md:text-5xl text-main-text font-bold">
             Making Impact Across Globe
           </div>
           {/* <div className="col-12"><ContactMap/></div> */}
           <div className="container-fluid mt-5">
             <div className="row">
               <div className="col-12">
-                <ContactMap />
+                <Map />
               </div>
             </div>
           </div>
@@ -191,13 +194,16 @@ const Home = () => {
       </div>
 
       {/* People Planet */}
+      {/* map-section */}
+
       {/* <PeoplePlanet /> */}
 
       <NewSection
         data={{
-          humbleSection: wholeData.HumbleSection,
-          humbleSubSection: wholeData.HumbleSubSection,
-          humbleFinalSection: wholeData.HumbleFinalSection,
+          humbleSection: "",
+          humbleSubSection: "",
+          humbleFinalSection:
+            "Since our inception, we've dedicated ourselves to delivering sustainable value creation. Our initiatives span education, healthcare, and environmental sustainability, aiming to uplift underserved communities and foster a sustainable nation. Each project we undertake reflects our dedication to embodying our values and serving as responsible corporate citizens, all while making a tangible difference.",
         }}
       />
     </>
