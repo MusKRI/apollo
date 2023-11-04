@@ -15,7 +15,7 @@ const Founder = ({ data }) => {
 
           {/* <p className="text-body-text">{data.humbleSubSection}</p> */}
 
-          <h4 className="italic text-xl whitespace-pre-line">
+          <h4 className="italic text-xl whitespace-pre-line font-bold">
             &quot;{data.humbleFinalSection}&quot;
           </h4>
         </div>

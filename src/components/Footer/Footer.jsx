@@ -22,7 +22,7 @@ const Variants = {
     },
   },
 };
-let background= {background:"linear-gradient(to right, #238e34, #23278c)"}
+let background = { background: "linear-gradient(to right, #238e34, #23278c)" };
 
 const Footer = () => {
   return (
@@ -48,7 +48,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Projects
                   </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Apparel & Footwear
                   </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Automotive Components
                   </Link>
@@ -78,7 +78,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Logistics & Supply Chain
                   </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Who We Are
                   </Link>
@@ -110,7 +110,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Purpose & Values
                   </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
                   variants={Variants}
                   className="flex flex-row items-center gap-2"
                 >
-                  <span className="w-2 h-2 bg-yellow-400" />
+                  <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
                     Leadership
                   </Link>
@@ -218,12 +218,10 @@ const Footer = () => {
                 className="flex-1 outline-none text-xl text-body-text"
               />
 
-              <button className="btn_gradient px-3 py-1 text-xs lg:px-5 lg:py-2 lg:text-base rounded-md text-white uppercase tracking-wider">
+              <button className="bg-black px-3 py-1 text-xs lg:px-5 lg:py-2 lg:text-base rounded-md text-white uppercase tracking-wider">
                 Subscribe
               </button>
             </motion.div>
-
-           
           </div>
         </div>
       </motion.div>
