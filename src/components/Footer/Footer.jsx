@@ -146,7 +146,7 @@ const Footer = () => {
 
               <div className="flex flex-col gap-2">
                 <motion.h2 variants={Variants} className="text-lg text-white">
-                  Apollo International Limited
+                  Apollo Green Energy Limited
                 </motion.h2>
                 <motion.p
                   variants={Variants}
@@ -206,11 +206,11 @@ const Footer = () => {
               variants={Variants}
               className="text-xl border-b text-white"
             >
-              Join our Newsletter
+              Subscribe our Newsletter
             </motion.h2>
             <motion.p variants={Variants} className="text-white">
-              and get information about our new products, special offers, and
-              upcoming events.
+              Sign up to our newsletter and be the firstone to see inspiring
+              content and latest news
             </motion.p>
 
             <motion.div
