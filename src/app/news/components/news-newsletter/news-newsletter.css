@@ -1,0 +1,59 @@
+.blogs .form__group {
+  position: relative;
+  width: 100%;
+}
+
+.blogs .form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: 0;
+  font-size: 17px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.blogs .form__field::placeholder {
+  color: transparent;
+}
+
+.blogs .form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 30px;
+}
+
+.blogs .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.blogs .form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 500;
+  border-width: 3px;
+  border-color: #002840;
+  border-image-slice: 1;
+}
+
+.blogs .form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #002840;
+  font-weight: 700;
+}
+
+/* reset input */
+.blogs .form__field:required,
+.blogs .form__field:invalid {
+  box-shadow: none;
+}

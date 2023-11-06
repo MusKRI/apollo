@@ -38,6 +38,11 @@ const navLinks = [
         label: "Leadership",
         slug: "/aboutus",
       },
+      {
+        id: "aboutus",
+        label: "Blogs",
+        slug: "/blogs",
+      },
     ],
   },
 

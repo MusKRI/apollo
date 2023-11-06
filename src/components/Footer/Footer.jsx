@@ -1,9 +1,6 @@
 // **** Library Imports ****
 import { Link } from "react-router-dom";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
-import { BiLogoFacebook } from "react-icons/bi";
-import { TfiYoutube } from "react-icons/tfi";
 import { motion } from "framer-motion";
 
 // **** Local Imports ****
@@ -32,7 +29,7 @@ const Footer = () => {
         whileInView="whileInView"
         className="flex flex-col lg:flex-row"
       >
-        <div className="flex-[0.65] px-4 lg:pl-20 py-10 flex-col gap-8 order-1 lg:order-0">
+        <div className="flex-[0.65] px-4 lg:pl-20 py-10 flex-col gap-8">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
             {/* Column 1 -> Businesses */}
             <div className="flex flex-col gap-4 lg:basis-1/3">
@@ -50,7 +47,7 @@ const Footer = () => {
                 >
                   <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
-                    Projects
+                    Apollo Green Energy
                   </Link>
                 </motion.div>
 
@@ -60,7 +57,7 @@ const Footer = () => {
                 >
                   <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
-                    Apparel & Footwear
+                    Apollo Supply Chain
                   </Link>
                 </motion.div>
 
@@ -70,7 +67,7 @@ const Footer = () => {
                 >
                   <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
-                    Automotive Components
+                    Apollo Fashion
                   </Link>
                 </motion.div>
 
@@ -80,7 +77,17 @@ const Footer = () => {
                 >
                   <span className="w-2 h-2 bg-white" />
                   <Link to="#" className="text-white">
-                    Logistics & Supply Chain
+                    Apollo ProX
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  variants={Variants}
+                  className="flex flex-row items-center gap-2"
+                >
+                  <span className="w-2 h-2 bg-white" />
+                  <Link to="#" className="text-white">
+                    Apollo Marketplace
                   </Link>
                 </motion.div>
               </div>
@@ -173,21 +180,18 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center justify-between mt-10">
-            <motion.p
-              variants={Variants}
-              className="text-white order-1 lg:order-0 text-center"
-            >
+            <motion.p variants={Variants} className="text-white text-center">
               Copyright &copy; {new Date().getFullYear()}. All rights reserved.
             </motion.p>
 
             <motion.div
               variants={Variants}
-              className="flex flex-col gap-1 order-0 lg:order-1 lg:flex-row lg:items-center lg:gap-6"
+              className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-8"
             >
-              <Link to="#" className="text-white">
+              <Link to="#" className="text-white mr-2">
                 Privacy Statement
               </Link>
-              <Link to="#" className="text-white">
+              <Link to="#" className="text-white mr-2">
                 Terms & Condition
               </Link>
               <Link to="#" className="text-white">
@@ -196,7 +200,7 @@ const Footer = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex-[0.35] pr-20 order-0 lg:order-1 px-4 lg:pr-20 py-10">
+        <div className="flex-[0.35] pr-20 px-4 lg:pr-20 py-10">
           <div className="flex flex-col gap-6">
             <motion.h2
               variants={Variants}
@@ -219,7 +223,7 @@ const Footer = () => {
               />
 
               <button className="bg-black px-3 py-1 text-xs lg:px-5 lg:py-2 lg:text-base rounded-md text-white uppercase tracking-wider">
-                Subscribe
+                SIGN UP
               </button>
             </motion.div>
           </div>

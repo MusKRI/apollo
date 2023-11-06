@@ -9,6 +9,9 @@ import Business from "./app/business/page";
 import SupplyChain from "./app/supply-chain/page";
 import ContactUs from "./app/contact-us/page";
 
+import BlogsPage from "./app/blogs/page";
+import NewsPage from "./app/news/page";
+
 function App() {
   return (
     <RootLayout>
@@ -19,6 +22,8 @@ function App() {
         <Route path="/business" element={<Business />} />
         <Route path="/supply-chain" element={<SupplyChain />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/news" element={<NewsPage />} />
       </Routes>
     </RootLayout>
   );
