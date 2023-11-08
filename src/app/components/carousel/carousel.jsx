@@ -2,7 +2,7 @@
 // **** Library Imports ****
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useState } from "react";
-import videos from "../../../assets/Mainvideo.mp4"
+import videos from "../../../assets/Mainvideo.mp4";
 // **** Local Imports ****
 import { cn } from "../../../lib/utils";
 
@@ -38,7 +38,7 @@ const Carousel = () => {
   return (
     <div className="relative">
       <div className="embla overflow-hidden relative" ref={emblaRef}>
-        <div className="embla__container flex xl:h-[650px]">
+        <div className="embla__container flex">
           {images.map((image) => {
             return (
               <div
@@ -70,7 +70,6 @@ const Carousel = () => {
             return (
               <div
                 key={item.alt}
-                
                 className="cursor-pointer"
                 onClick={() => {
                   setChange((prev) => prev + 1);
@@ -78,7 +77,6 @@ const Carousel = () => {
                 }}
               >
                 <div className="flex flex-col">
-                   
                   <div
                     className={cn(
                       "h-[2px] w-20",
