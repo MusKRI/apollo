@@ -24,8 +24,8 @@ const NewSection = ({ data }) => {
 
           {/* <p className="text-body-text">{data.humbleSubSection}</p> */}
 
-          <h4 className="italic text-xl">
-            &quot;{data.humbleFinalSection}&quot;
+          <h4 className="text-xl">
+            {data.humbleFinalSection}
           </h4>
         </div>
       </div>

@@ -1,13 +1,14 @@
 // **** Library Imports ****
-import { useCallback, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useCallback, useState, useEffect, useMemo } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import * as Tabs from "@radix-ui/react-tabs";
 
 // **** Local Imports ****
 import SectionHeading from "../SectionHeading";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { DotButton } from "./EmblaCarouselArrowsDotsButtons";
+// import { DotButton } from "./EmblaCarouselArrowsDotsButtons";
 
 import FashionImg from "./images/fashion.png";
 import GreenEnergyImg from "./images/green-energy.png";
@@ -63,22 +64,21 @@ const images = [
   // },
 ];
 
-const cardVariants = {
-  hidden: {
-    background: "linear-gradient(to bottom, transparent, transparent)",
-  },
-  hover: {
-    background: "linear-gradient(to bottom, #238e34, #23278c)",
-    transition: {
-      duration: 2,
-    },
-  },
-};
+// const cardVariants = {
+//   hidden: {
+//     background: "linear-gradient(to bottom, transparent, transparent)",
+//   },
+//   hover: {
+//     background: "linear-gradient(to bottom, #238e34, #23278c)",
+//     transition: {
+//       duration: 2,
+//     },
+//   },
+// };
 
 const cardLinkVariants = {
   hidden: {
     y: 200,
-    display: "none",
   },
   hover: {
     y: 0,
@@ -89,34 +89,63 @@ const cardLinkVariants = {
 const Business = ({ mainData, slides }) => {
   const MotionLink = motion(Link);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-  });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
+  console.log("slides", slides);
 
-  const scrollTo = useCallback(
-    (index) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
+  const slidesIds = useMemo(() => {
+    const result = slides.map((_, index) => `slide_${index}`);
 
-  const onInit = useCallback((emblaApi) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, []);
+    return result;
+  }, [slides]);
 
-  const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, []);
+  const [currentSlide, setCurrentSlide] = useState(slidesIds[0]);
+
+  // const [emblaRef, emblaApi] = useEmblaCarousel({
+  //   align: "center",
+  // });
+  // const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [scrollSnaps, setScrollSnaps] = useState([]);
+
+  // const scrollTo = useCallback(
+  //   (index) => emblaApi && emblaApi.scrollTo(index),
+  //   [emblaApi]
+  // );
+
+  // const onInit = useCallback((emblaApi) => {
+  //   setScrollSnaps(emblaApi.scrollSnapList());
+  // }, []);
+
+  // const onSelect = useCallback((emblaApi) => {
+  //   setSelectedIndex(emblaApi.selectedScrollSnap());
+  // }, []);
+
+  // useEffect(() => {
+  //   if (!emblaApi) return;
+
+  //   onInit(emblaApi);
+  //   onSelect(emblaApi);
+  //   emblaApi.on("reInit", onInit);
+  //   emblaApi.on("reInit", onSelect);
+  //   emblaApi.on("select", onSelect);
+  // }, [emblaApi, onInit, onSelect]);
 
   useEffect(() => {
-    if (!emblaApi) return;
+    const interval = setInterval(() => {
+      const currentSlideIndex = slidesIds.indexOf(currentSlide);
+      let nextSlideIndex;
 
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on("reInit", onInit);
-    emblaApi.on("reInit", onSelect);
-    emblaApi.on("select", onSelect);
-  }, [emblaApi, onInit, onSelect]);
+      if (currentSlideIndex === 0) {
+        nextSlideIndex = currentSlideIndex + 1;
+      } else if (currentSlideIndex === slidesIds.length - 1) {
+        nextSlideIndex = 0;
+      } else {
+        nextSlideIndex = currentSlideIndex + 1;
+      }
+
+      setCurrentSlide(`slide_${nextSlideIndex}`);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
 
   return (
     <section className="relative px-3 md:px-5 bg-[#f9f9f9]">
@@ -130,18 +159,108 @@ const Business = ({ mainData, slides }) => {
         </div>
 
         <div className="px-6 relative">
-          <div className="embla">
-            <div className="embla__viewport overflow-hidden" ref={emblaRef}>
-              <div className="embla__container flex touch-pan-y">
-                {slides.map((slide, index) => (
-                  <div
-                    className={cn(
-                      "embla__slide flex-[0_0_100%] sm:flex-[0_0_90%] md:flex-[0_0_80%] lg:flex-[0_0_33%] min-w-0 relative mx-2 flex justify-center transition-transform",
-                      index === selectedIndex ? "lg:scale-100" : "lg:scale-90"
-                    )}
-                    key={index}
+          <Tabs.Root
+            value={currentSlide}
+            defaultValue={currentSlide}
+            onValueChange={setCurrentSlide}
+          >
+            <div className="flex flex-row gap-10 justify-center">
+              {(() => {
+                const currentSlideIndex = slidesIds.indexOf(currentSlide);
+                let previousSlideIndex;
+
+                if (currentSlideIndex === 0) {
+                  previousSlideIndex = slidesIds.length - 1;
+                } else if (currentSlideIndex === slidesIds.length - 1) {
+                  previousSlideIndex = currentSlideIndex - 1;
+                } else {
+                  previousSlideIndex = currentSlideIndex - 1;
+                }
+
+                const previousSlide = slides[previousSlideIndex];
+
+                return (
+                  <AnimatePresence>
+                    <motion.div
+                      key="previous"
+                      className="flex-1 hidden md:block"
+                      initial={{
+                        x: 10,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        x: 0,
+                        opacity: 1,
+                        transition: {
+                          duration: 0.5,
+                        },
+                      }}
+                    >
+                      <div className="relative overflow-hidden rounded-lg w-full h-[500px]">
+                        <div className="h-full relative z-0 max-w-full">
+                          <img
+                            src={previousSlide.backgroundImage}
+                            className="max-w-full h-full"
+                          />
+                        </div>
+                        <motion.div
+                          // variants={cardVariants}
+                          initial="hidden"
+                          whileHover="hover"
+                          className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
+                        >
+                          <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
+                            {previousSlide.cardHeading}
+                          </div>
+
+                          <div className="text-white px-6 py-4 flex flex-col gap-3">
+                            {/* <h1 className="text-4xl font-semibold transition">
+                              {previousSlide.cardHeading}
+                            </h1> */}
+                            <p className="transition">
+                              {previousSlide.cardContent}
+                            </p>
+
+                            <MotionLink
+                              variants={cardLinkVariants}
+                              layout
+                              to="#"
+                              className="flex items-center gap-2"
+                            >
+                              <span className="text-lg">Know more</span>
+                              <span className="p-2 rounded-full bg-yellow-500">
+                                <ArrowRight className="w-4 h-4" />
+                              </span>
+                            </MotionLink>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                );
+              })()}
+
+              {slides.map((slide, index) => {
+                return (
+                  <Tabs.Content
+                    key={`slide_${index}`}
+                    value={`slide_${index}`}
+                    className="flex-1 md:scale-105 self-center"
                   >
-                    <div className="relative overflow-hidden rounded-lg w-full h-[460px] md:h-[500px] lg:h-[600px]">
+                    <motion.div
+                      initial={{
+                        x: 10,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        x: 0,
+                        opacity: 1,
+                        transition: {
+                          duration: 0.5,
+                        },
+                      }}
+                      className="relative overflow-hidden rounded-lg w-full h-[500px]"
+                    >
                       <div className="h-full relative z-0 max-w-full">
                         <img
                           src={slide.backgroundImage}
@@ -155,13 +274,13 @@ const Business = ({ mainData, slides }) => {
                         className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
                       >
                         <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                          {slide.cardTag}
+                          {slide.cardHeading}
                         </div>
 
                         <div className="text-white px-6 py-4 flex flex-col gap-3">
-                          <h1 className="text-4xl font-semibold transition">
+                          {/* <h1 className="text-4xl font-semibold transition">
                             {slide.cardHeading}
-                          </h1>
+                          </h1> */}
                           <p className="transition">{slide.cardContent}</p>
 
                           <MotionLink
@@ -177,200 +296,103 @@ const Business = ({ mainData, slides }) => {
                           </MotionLink>
                         </div>
                       </motion.div>
+                    </motion.div>
+                  </Tabs.Content>
+                );
+              })}
+
+              {(() => {
+                const currentSlideIndex = slidesIds.indexOf(currentSlide);
+                let nextSlideIndex;
+
+                if (currentSlideIndex === 0) {
+                  nextSlideIndex = currentSlideIndex + 1;
+                } else if (currentSlideIndex === slidesIds.length - 1) {
+                  nextSlideIndex = 0;
+                } else {
+                  nextSlideIndex = currentSlideIndex + 1;
+                }
+                const nextSlide = slides[nextSlideIndex];
+
+                return (
+                  <motion.div
+                    initial={{
+                      x: 10,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      x: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.5,
+                      },
+                    }}
+                    className="flex-1 hidden md:block"
+                  >
+                    <div className="relative overflow-hidden rounded-lg w-full h-[500px]">
+                      <div className="h-full relative z-0 max-w-full">
+                        <img
+                          src={nextSlide.backgroundImage}
+                          className="max-w-full h-full"
+                        />
+                      </div>
+
+                      <motion.div
+                        // variants={cardVariants}
+                        initial="hidden"
+                        whileHover="hover"
+                        className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
+                      >
+                        <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
+                          {nextSlide.cardHeading}
+                        </div>
+
+                        <div className="text-white px-6 py-4 flex flex-col gap-3">
+                          {/* <h1 className="text-4xl font-semibold transition">
+                            {nextSlide.cardHeading}
+                          </h1> */}
+                          <p className="transition">{nextSlide.cardContent}</p>
+
+                          <MotionLink
+                            variants={cardLinkVariants}
+                            layout
+                            to="#"
+                            className="flex items-center gap-2"
+                          >
+                            <span className="text-lg">Know more</span>
+                            <span className="p-2 rounded-full bg-yellow-500">
+                              <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </MotionLink>
+                        </div>
+                      </motion.div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  </motion.div>
+                );
+              })()}
             </div>
-          </div>
 
-          <div className="embla__dots">
-            {scrollSnaps.map((_, index) => (
-              <DotButton
-                key={index}
-                onClick={() => scrollTo(index)}
-                className={"embla__dot".concat(
-                  index === selectedIndex ? " embla__dot--selected" : ""
-                )}
-              />
-            ))}
-          </div>
+            <Tabs.List>
+              <div className="mt-4 md:mt-5 flex items-center justify-center gap-4">
+                {slides.map((slide, index) => {
+                  const isActive = currentSlide === `slide_${index}`;
+
+                  return (
+                    <Tabs.Trigger
+                      value={`slide_${index}`}
+                      key={`slide_${index}`}
+                      className="w-4 h-4 rounded-full border !border-[#2e3192] flex items-center justify-center p-[2px]"
+                    >
+                      {isActive && (
+                        <div className="block bg-[#2e3192] rounded-full p-1" />
+                      )}
+                    </Tabs.Trigger>
+                  );
+                })}
+              </div>
+            </Tabs.List>
+          </Tabs.Root>
         </div>
-
-        {/* <div className="flex-1 flex flex-row items-center justify-center lg:justify-stretch flex-wrap gap-4 order-0 lg:order-1">
-       
-          <div
-            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px] xl:-mt-[50px]"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-            <motion.div
-              variants={cardVariants}
-              initial="hidden"
-              whileHover="hover"
-              className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
-            >
-              <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                Business
-              </div>
-
-              <div className="text-white px-6 py-4 flex flex-col gap-3">
-                <h1 className="text-4xl font-semibold transition">
-                  Most Critical Business Priority
-                </h1>
-                <p className="transition">
-                  We are providing loream services in this sector to wide area
-                  of world
-                </p>
-
-                <MotionLink
-                  variants={cardLinkVariants}
-                  layout
-                  to="#"
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-lg">Know more</span>
-                  <span className="p-2 rounded-full bg-yellow-500">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </MotionLink>
-              </div>
-            </motion.div>
-          </div>
-
-          <div
-            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px]"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-            <motion.div
-              variants={cardVariants}
-              initial="hidden"
-              whileHover="hover"
-              className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
-            >
-              <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                Business
-              </div>
-
-              <div className="text-white px-6 py-4 flex flex-col gap-3">
-                <h1 className="text-4xl font-semibold transition">
-                  Most Critical Business Priority
-                </h1>
-                <p className="transition">
-                  We are providing loream services in this sector to wide area
-                  of world
-                </p>
-
-                <MotionLink
-                  variants={cardLinkVariants}
-                  layout
-                  to="#"
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-lg">Know more</span>
-                  <span className="p-2 rounded-full bg-yellow-500">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </MotionLink>
-              </div>
-            </motion.div>
-          </div>
-
-          <div
-            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px] xl:-mt-[50px]"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-            <motion.div
-              variants={cardVariants}
-              initial="hidden"
-              whileHover="hover"
-              className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
-            >
-              <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                Business
-              </div>
-
-              <div className="text-white px-6 py-4 flex flex-col gap-3">
-                <h1 className="text-4xl font-semibold transition">
-                  Most Critical Business Priority
-                </h1>
-                <p className="transition">
-                  We are providing loream services in this sector to wide area
-                  of world
-                </p>
-
-                <MotionLink
-                  variants={cardLinkVariants}
-                  layout
-                  to="#"
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-lg">Know more</span>
-                  <span className="p-2 rounded-full bg-yellow-500">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </MotionLink>
-              </div>
-            </motion.div>
-          </div>
-
-          <div
-            className="relative overflow-hidden rounded-lg w-80 lg:w-[280px] h-[440px] lg:h-[500px]"
-            style={{
-              backgroundImage:
-                "url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-            <motion.div
-              variants={cardVariants}
-              initial="hidden"
-              whileHover="hover"
-              className="absolute inset-0 rounded-lg bg-black/[0.16] flex items-end group hover:mix-blend-hard-light"
-            >
-              <div className="absolute top-4 left-4 rounded-[10px_0] bg-white px-3 py-[3px]">
-                Business
-              </div>
-
-              <div className="text-white px-6 py-4 flex flex-col gap-3">
-                <h1 className="text-4xl font-semibold transition">
-                  Most Critical Business Priority
-                </h1>
-                <p className="transition">
-                  We are providing loream services in this sector to wide area
-                  of world
-                </p>
-
-                <MotionLink
-                  variants={cardLinkVariants}
-                  layout
-                  to="#"
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-lg">Know more</span>
-                  <span className="p-2 rounded-full bg-yellow-500">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </MotionLink>
-              </div>
-            </motion.div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

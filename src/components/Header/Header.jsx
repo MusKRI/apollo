@@ -10,12 +10,12 @@ import LinkWithChildren from "./components/LinkWithChildren";
 import Logo from "./images/logo.png";
 
 const navLinks = [
-  {
-    id: "home",
-    label: "Home",
-    children: null,
-    slug: "/",
-  },
+  // {
+  //   id: "home",
+  //   label: "Home",
+  //   children: null,
+  //   slug: "/",
+  // },
 
   {
     id: "about-us",
@@ -38,6 +38,48 @@ const navLinks = [
         label: "Leadership",
         slug: "/aboutus",
       },
+    ],
+  },
+
+  {
+    id: "our-businesses",
+    label: "Our Businesses",
+    children: [
+      {
+        id: "supply-chain",
+        label: "Supply Chain",
+        slug: "/supply-chain",
+      },
+
+      {
+        id: "fashion",
+        label: "Fashion",
+        slug: "#",
+      },
+
+      {
+        id: "marketplace",
+        label: "Marketplace",
+        slug: "#",
+      },
+      {
+        id: "prox",
+        label: "ProX",
+        slug: "#",
+      },
+    ],
+  },
+
+  {
+    id: "people-planet",
+    label: "People & Planet",
+    children: null,
+    slug: "/people-planet",
+  },
+  {
+    id: "media-center",
+    label: "Media Center",
+    children: [
       {
         id: "aboutus",
         label: "Blogs",
@@ -52,46 +94,10 @@ const navLinks = [
   },
 
   {
-    id: "our-businesses",
-    label: "Our Businesses",
-    children: [
-      {
-        id: "projects",
-        label: "Projects",
-        slug: "/business",
-      },
-
-      {
-        id: "apparel-footwear",
-        label: "Apparel & Footwear",
-        slug: "/business",
-      },
-
-      {
-        id: "automotive-components",
-        label: "Automotive Components",
-        slug: "/business",
-      },
-
-      {
-        id: "logistics-supply-chain",
-        label: "Logistics & Supply Chain",
-        slug: "/supply-chain",
-      },
-    ],
-  },
-
-  {
-    id: "planet-society",
-    label: "Planet & Society",
-    children: null,
-    slug: "/planet-society",
-  },
-
-  {
     id: "careers",
     label: "Careers",
-    children: [],
+    children: null,
+    slug: "#",
   },
 
   {
@@ -114,7 +120,7 @@ const Header = () => {
         </Link>
 
         {/* nav */}
-        <nav className="h-full">
+        <nav className="h-full ml-auto">
           <ul className="items-center h-full hidden lg:flex">
             {navLinks.map((link) => {
               const { id, label, slug, children } = link;

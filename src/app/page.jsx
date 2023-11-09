@@ -87,8 +87,7 @@ const Home = () => {
     HumbleSection: "",
     HumbleSubSection:
       "A scion of the Kanwar family, the founders of Apollo Tyers, Raaja kanwar chose to carve a path following his passion for start-ups using disruptive technology. As a passionate investor, Raaja takes a keen interest in entrepreneurial visions that hold a promise to make the world a better place for the next generations. Under his tutelage, using smart technology, innovative practices executed by best-in-class talent in the country, Apollo International Limited is delivering high quality, bespoke products and solutions across sectors.",
-    HumbleFinalSection:
-      "We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet.\n\nMr. Raaja Kanwar, Chairman & Managing Director, Apollo Green Energy",
+    HumbleFinalSection: `"We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet."\n\nMr. Raaja Kanwar, Chairman & Managing Director, Apollo Green Energy`,
     HumbleLogo: "",
   };
 
@@ -178,7 +177,7 @@ const Home = () => {
       />
       {/* //map Section */}
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center py-12">
           <div className="col-12 d-flex justify-content-center text-[28px] md:text-5xl text-main-text font-bold">
             Making Impact Across Globe
           </div>

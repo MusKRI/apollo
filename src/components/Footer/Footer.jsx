@@ -208,11 +208,6 @@ const Footer = () => {
             >
               Subscribe our Newsletter
             </motion.h2>
-            <motion.p variants={Variants} className="text-white">
-              Sign up to our newsletter and be the firstone to see inspiring
-              content and latest news
-            </motion.p>
-
             <motion.div
               variants={Variants}
               className="bg-white w-full flex p-1 rounded-md"

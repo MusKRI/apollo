@@ -83,13 +83,6 @@ const HomeAboutUs = ({ data }) => {
           whileInView="whileInView"
           className="flex-1 px-6 flex flex-col gap-3"
         >
-          <motion.p
-            variants={textVariants}
-            className="text-lg font-medium text-main-text"
-          >
-            About us
-          </motion.p>
-
           <motion.h1
             variants={textVariants}
             className="text-[28px] md:text-5xl font-medium text-main-text"
