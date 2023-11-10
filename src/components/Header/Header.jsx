@@ -54,7 +54,7 @@ const navLinks = [
       {
         id: "fashion",
         label: "Fashion",
-        slug: "#",
+        slug: "/fashion",
       },
 
       {
