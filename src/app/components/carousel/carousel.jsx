@@ -45,43 +45,14 @@ const Carousel = () => {
                 className="embla__slide flex-[0_0_100%] min-w-0 max-w-full relative"
                 key={image.alt}
               >
-                <div className="">
+                <div className="h-screen">
                   <video
                     muted
                     loop="true"
-                    autoplay="autoplay"
+                    autoPlay={true}
                     src={image.src}
                     alt={image.alt}
-                    autoPlay="true"
                     className="object-fill"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="absolute left-0 bottom-12 right-0 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center gap-5 px-5">
-          {images.map((item, index) => {
-            const isActive = index === activeSnap();
-
-            return (
-              <div
-                key={item.alt}
-                className="cursor-pointer"
-                onClick={() => {
-                  setChange((prev) => prev + 1);
-                  scrollToSnap(index);
-                }}
-              >
-                <div className="flex flex-col">
-                  <div
-                    className={cn(
-                      "h-[2px] w-20",
-                      isActive ? "bg-white" : "bg-slate-300"
-                    )}
                   />
                 </div>
               </div>

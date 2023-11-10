@@ -76,7 +76,7 @@ const Home = () => {
     BusinessSlideContent4:
       "Apollo Pro X essentially serves as an all-encompassing EPC (Engineering, Procurement, and Construction) solution, executing large industrial and infrastructure projects",
     BusinessCardName4: "Business",
-    BusinessCardHeading4: ".Apollo Pro X",
+    BusinessCardHeading4: "Apollo Pro X",
     BusinessKnowMore4: "",
     BusinessSlide5: BusinessXImg,
     BusinessSlideContent5:
@@ -87,7 +87,7 @@ const Home = () => {
     HumbleSection: "",
     HumbleSubSection:
       "A scion of the Kanwar family, the founders of Apollo Tyers, Raaja kanwar chose to carve a path following his passion for start-ups using disruptive technology. As a passionate investor, Raaja takes a keen interest in entrepreneurial visions that hold a promise to make the world a better place for the next generations. Under his tutelage, using smart technology, innovative practices executed by best-in-class talent in the country, Apollo International Limited is delivering high quality, bespoke products and solutions across sectors.",
-    HumbleFinalSection: `"We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet."\n\nMr. Raaja Kanwar, Chairman & Managing Director, Apollo Green Energy`,
+    HumbleFinalSection: `"<i>We started our journey with a clear vision to build an organisation that can solve real-world challenges and makes a distinct positive difference to the economy, people, and the planet."</i>\n\nMr. Raaja Kanwar, Chairman & Managing Director, Apollo Green Energy`,
     HumbleLogo: "",
   };
 

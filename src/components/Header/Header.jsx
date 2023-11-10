@@ -110,7 +110,7 @@ const navLinks = [
 
 const Header = () => {
   return (
-    <header className="relative bg-white h-[72px] px-3 md:px-5">
+    <header className="bg-white h-[72px] px-3 md:px-5 fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo */}
         <Link to="/" className="">

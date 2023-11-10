@@ -26,8 +26,12 @@ const Founder = ({ data }) => {
 
           {/* <p className="text-body-text">{data.humbleSubSection}</p> */}
 
-          <h4 className="italic text-xl whitespace-pre-line font-bold">
-            {data.humbleFinalSection}
+          <h4 className="text-xl whitespace-pre-line font-bold">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.humbleFinalSection,
+              }}
+            />
           </h4>
         </div>
       </div>

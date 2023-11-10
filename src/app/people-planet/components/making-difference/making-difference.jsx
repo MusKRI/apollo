@@ -1,4 +1,4 @@
-import Arrow from "../../images/arrow.png";
+// import Arrow from "../../images/arrow.png";
 
 const MakingDifference = () => {
   return (
@@ -11,9 +11,9 @@ const MakingDifference = () => {
             project at a time
           </h1>
 
-          <div className="absolute bottom-4 w-60 hidden md:block">
+          {/* <div className="absolute bottom-4 w-60 hidden md:block">
             <img alt="Arrow" src={Arrow} />
-          </div>
+          </div> */}
         </div>
         <div className="flex-1 flex-col flex gap-4">
           <p className="text-lg max-w-xl">
@@ -29,11 +29,11 @@ const MakingDifference = () => {
             considering the size and unique challenges of our country.
           </p>
 
-          <button className="self-start border p-8 text-center flex items-center justify-center rounded-full animate-pulse">
+          {/* <button className="self-start border p-8 text-center flex items-center justify-center rounded-full animate-pulse">
             Explore
             <br />
             More
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
