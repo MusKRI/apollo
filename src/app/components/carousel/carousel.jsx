@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // **** Library Imports ****
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useState } from "react";
+// import { useCallback, useState } from "react";
 import videos from "../../../assets/Mainvideo.mp4";
 // **** Local Imports ****
-import { cn } from "../../../lib/utils";
+// import { cn } from "../../../lib/utils";
 
 const images = [
   {
@@ -14,9 +14,7 @@ const images = [
 ];
 
 const Carousel = () => {
-  const [change, setChange] = useState(0);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const [emblaRef] = useEmblaCarousel({
     watchDrag: true,
     breakpoints: {
       "(min-width:768px)": {
@@ -24,16 +22,6 @@ const Carousel = () => {
       },
     },
   });
-  const activeSnap = useCallback(() => {
-    if (emblaApi) return emblaApi.selectedScrollSnap();
-  }, [emblaApi, change]);
-
-  const scrollToSnap = useCallback(
-    (activeIndex) => {
-      if (emblaApi) emblaApi.scrollTo(activeIndex);
-    },
-    [emblaApi, change]
-  );
 
   return (
     <div className="relative">

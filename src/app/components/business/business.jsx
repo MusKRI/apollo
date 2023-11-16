@@ -1,7 +1,6 @@
 // **** Library Imports ****
-import { useCallback, useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import useEmblaCarousel from "embla-carousel-react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import * as Tabs from "@radix-ui/react-tabs";
@@ -9,60 +8,6 @@ import * as Tabs from "@radix-ui/react-tabs";
 // **** Local Imports ****
 import SectionHeading from "../SectionHeading";
 // import { DotButton } from "./EmblaCarouselArrowsDotsButtons";
-
-import FashionImg from "./images/fashion.png";
-import GreenEnergyImg from "./images/green-energy.png";
-import SupplyChainImg from "./images/supply-chin.png";
-
-import { cn } from "../../../lib/utils";
-
-const images = [
-  {
-    backgroundImage: FashionImg,
-    overlayTag: "Fashion Company",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
-  {
-    backgroundImage: GreenEnergyImg,
-    overlayTag: "Green Energy",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
-  {
-    backgroundImage: SupplyChainImg,
-    overlayTag: "Supply Chain",
-    overlayTitle: "Most Critical Business Priority",
-    overlaytDescription:
-      "We are providing loream services in this sector to wide area of world",
-  },
-  // {
-  //   backgroundImage:
-  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  //   overlayTag: "Supply Chain",
-  //   overlayTitle: "Most Critical Business Priority",
-  //   overlaytDescription:
-  //     "We are providing loream services in this sector to wide area of world",
-  // },
-  // {
-  //   backgroundImage:
-  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  //   overlayTag: "Supply Chain",
-  //   overlayTitle: "Most Critical Business Priority",
-  //   overlaytDescription:
-  //     "We are providing loream services in this sector to wide area of world",
-  // },
-  // {
-  //   backgroundImage:
-  //     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  //   overlayTag: "Supply Chain",
-  //   overlayTitle: "Most Critical Business Priority",
-  //   overlaytDescription:
-  //     "We are providing loream services in this sector to wide area of world",
-  // },
-];
 
 // const cardVariants = {
 //   hidden: {
@@ -87,9 +32,9 @@ const cardLinkVariants = {
 };
 
 const Business = ({ mainData, slides }) => {
-  const MotionLink = motion(Link);
+  console.log("business data", slides);
 
-  console.log("slides", slides);
+  const MotionLink = motion(Link);
 
   const slidesIds = useMemo(() => {
     const result = slides.map((_, index) => `slide_${index}`);
