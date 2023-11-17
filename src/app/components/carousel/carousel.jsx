@@ -33,7 +33,7 @@ const Carousel = () => {
                 className="embla__slide flex-[0_0_100%] min-w-0 max-w-full relative"
                 key={image.alt}
               >
-                <div className="h-screen">
+                <div className="h-auto lg:h-screen">
                   <video
                     muted
                     loop="true"

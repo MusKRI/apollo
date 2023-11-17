@@ -1,6 +1,6 @@
 // **** Library Imports ****
 import { BsSearch } from "react-icons/bs";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
 // **** Local Imports ****
@@ -109,8 +109,15 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const { scrollY } = useScroll();
+
+  const opacity = useTransform(scrollY, [0, 100], [0, 1]);
+
   return (
-    <header className="bg-white h-[72px] px-3 md:px-5 fixed top-0 w-full z-50">
+    <motion.header
+      className="bg-white h-[72px] px-3 md:px-5 fixed top-0 w-full z-50"
+      style={{ opacity }}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
         {/* Logo */}
         <Link to="/" className="">
@@ -120,7 +127,7 @@ const Header = () => {
         </Link>
 
         {/* nav */}
-        <nav className="h-full ml-auto">
+        <nav className="h-full ml-auto hidden lg:block">
           <ul className="items-center h-full hidden lg:flex">
             {navLinks.map((link) => {
               const { id, label, slug, children } = link;
@@ -141,7 +148,7 @@ const Header = () => {
         </nav>
 
         {/* Search */}
-        <div className="h-full flex items-center gap-4">
+        <div className="h-full items-center gap-4 hidden lg:flex">
           <BsSearch className="w-5 h-5" />
 
           <motion.button
@@ -154,7 +161,7 @@ const Header = () => {
           </motion.button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

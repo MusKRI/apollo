@@ -9,6 +9,7 @@ const RootLayout = ({ children }) => {
     <>
       <CustomCursor>
         <Header />
+        {/* <div className="h-[72px]"/> */}
         {children}
         <Footer />
       </CustomCursor>

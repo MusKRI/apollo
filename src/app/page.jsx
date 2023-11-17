@@ -19,6 +19,7 @@ import Business from "./components/business/business";
 import NewSection from "./components/new/new";
 import Map from "./map";
 import { useEffect, useState } from "react";
+import HomeMap from "./components/map/map";
 
 const Home = () => {
   const [initialData, setInitialData] = useState({});
@@ -180,21 +181,7 @@ const Home = () => {
         }}
       />
       {/* //map Section */}
-      <div className="container">
-        <div className="row justify-content-center py-12">
-          <div className="col-12 d-flex justify-content-center text-[28px] md:text-5xl text-main-text font-bold">
-            Making Impact Across Globe
-          </div>
-          {/* <div className="col-12"><ContactMap/></div> */}
-          <div className="container-fluid mt-5">
-            <div className="row">
-              <div className="col-12">
-                <Map />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HomeMap />
 
       {/* People Planet */}
       {/* map-section */}
