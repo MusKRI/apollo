@@ -97,7 +97,7 @@ const Business = ({ mainData, slides }) => {
       <div className="max-w-7xl mx-auto flex flex-col py-16 md:py-32 gap-10">
         <div className="flex flex-col gap-4 items-center">
           <SectionHeading classes="font-bold text-center">
-            {mainData.mainHeading}
+            {mainData.mainHeading ?? "Make your business visible online"}
           </SectionHeading>
 
           <p className="text-body-text text-center">{mainData.subHeading}</p>

@@ -1,44 +1,23 @@
 // **** Library imports *****
 import { motion } from "framer-motion";
 
-const imgNodes = [
-  {
-    id: "1",
-    img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
-    title: "Excepteur sint occaecat",
-    description:
-      "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
-  },
-  {
-    id: "2",
-    img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
-    title: "Excepteur sint occaecat",
-    description:
-      "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
-  },
-  {
-    id: "3",
-    img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
-    title: "Excepteur sint occaecat",
-    description:
-      "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
-  },
-  {
-    id: "4",
-    img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
-    title: "Excepteur sint occaecat",
-    description:
-      "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
-  },
-];
+// const imgNodes = [
+//   {
+//     id: "1",
+//     img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
+//     title: "Excepteur sint occaecat",
+//     description:
+//       "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
+//   },
+// ];
 
-const WhoWeAre = () => {
+const WhoWeAre = ({ data }) => {
   return (
     <section className="relative px-3 md:px-5">
       <div className="max-w-7xl mx-auto flex flex-col py-16 md:py-32">
         <div className="flex flex-col gap-7 items-center">
-          <h2 className="text-green text-center text-2xl">About Us</h2>
-          <h1 className="text-6xl">Who We Are</h1>
+          <h2 className="text-green text-center text-2xl">{data?.subtitle}</h2>
+          <h1 className="text-6xl">{data?.title}</h1>
         </div>
 
         <motion.div
@@ -61,7 +40,7 @@ const WhoWeAre = () => {
             },
           }}
         >
-          {imgNodes.map((imgNode) => {
+          {data?.nodes.map((imgNode) => {
             return (
               <motion.div
                 layout="position"

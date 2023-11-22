@@ -1,11 +1,5 @@
-.splide__slide {
-  /* margin-right: 0 !important; */
-  /* border: 1px solid red; */
-  /* width: 500px !important; */
-}
-
 .ExpertiseArea .splide__pagination {
-  bottom: -2.5em;
+  bottom: -3.5em;
   gap: 8px;
 }
 

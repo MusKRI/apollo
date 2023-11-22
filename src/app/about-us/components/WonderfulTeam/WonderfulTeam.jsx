@@ -5,64 +5,64 @@ import { ImLinkedin2 } from "react-icons/im";
 
 // ***** Local Imports ******
 
-const teamMembers = [
-  {
-    id: "1",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "2",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "3",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "4",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "5",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "6",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "7",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-  {
-    id: "8",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-    name: "Paddy O'Furniture",
-    position: "Name of Position",
-  },
-];
+// const teamMembers = [
+//   {
+//     id: "1",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "2",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "3",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "4",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "5",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "6",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "7",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+//   {
+//     id: "8",
+//     image:
+//       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
+//     name: "Paddy O'Furniture",
+//     position: "Name of Position",
+//   },
+// ];
 
 const SocialContainerVariants = {
   hidden: {
@@ -89,18 +89,18 @@ const socialVariants = {
   },
 };
 
-const WonderfulTeam = () => {
+const WonderfulTeam = ({ data }) => {
   return (
     <section className="relative px-3 md:px-5">
       <div className="max-w-7xl mx-auto flex flex-col py-16 md:py-32">
         <div className="flex flex-col gap-7 items-center">
-          <h2 className="text-center text-2xl">Meet</h2>
-          <h1 className="text-4xl lg:text-6xl">Our Wonderful Team</h1>
+          <h2 className="text-center text-2xl">{data?.subtitle}</h2>
+          <h1 className="text-4xl lg:text-6xl">{data?.title}</h1>
         </div>
 
         <div className="mt-10 py-3">
           <div className="flex flex-wrap justify-center gap-8">
-            {teamMembers.map((member) => {
+            {data?.members.map((member) => {
               return (
                 <motion.div
                   className="lg:basis-1/5 relative bg-white shadow-lg rounded-lg flex flex-col lg:even:translate-y-10"

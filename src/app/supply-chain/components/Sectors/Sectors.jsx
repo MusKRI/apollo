@@ -3,27 +3,33 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 import TransportImage from "../../images/sectors/transport.png";
+import { useState } from "react";
 
 const keySectors = [
   {
     id: "1",
     pv: "Consumer Durables & High-Tech Industries",
+    image: TransportImage
   },
   {
     id: "2",
     pv: "Automotive & Industrial Sector",
+    image: TransportImage
   },
   {
     id: "3",
     pv: "E-Commerce & FMCG",
+    image: TransportImage
   },
   {
     id: "4",
     pv: "Healthcare & Pharmaceuticals",
+    image: TransportImage
   },
   {
     id: "5",
     pv: "Lifestyle & Retail",
+    image: TransportImage
   },
 ];
 
@@ -44,6 +50,12 @@ const keySectors = [
 // };
 
 const Sectors = () => {
+  const [currentImage, setCurrentImage] = useState(keySectors[0]?.image);
+
+  const handleCurrentImage = (index) => {
+    setCurrentImage(keySectors[index]?.image);
+  };
+
   return (
     <section className="relative px-3 md:px-5 bg-[#f6f6f6]">
       <div className="max-w-7xl mx-auto flex flex-col gap-5 lg:flex-row lg:justify-between py-16 md:py-32">
@@ -56,7 +68,7 @@ const Sectors = () => {
           <div className="aspect-square relative">
             <img
               alt="Transport"
-              src={TransportImage}
+              src={currentImage}
               className="mix-blend-multiply"
             />
           </div>
@@ -77,6 +89,7 @@ const Sectors = () => {
                     whileHover="onHover"
                     key={keySector.id}
                     className="flex flex-row items-center justify-between p-5 relative first:border-t-2 border-b-2 group"
+                    onClick={() => handleCurrentImage(index)}
                   >
                     {/* <motion.div
                       variants={pvVariants}

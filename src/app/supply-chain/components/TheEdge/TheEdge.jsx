@@ -3,12 +3,26 @@ import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import LogisticImage from "../../images/the-edge/logistic.png";
+// import LogisticImage from "../../images/the-edge/logistic.png";
 import ApolloAccordion from "../../../../components/ui/accordion/accordion";
+import { useState } from "react";
 
 const TheEdge = () => {
   const MotionLink = motion(Link);
   const MotionArrowRight = motion(BsArrowRight);
+
+  const images = [
+    "https://apollosupplychain.com/cms/wp-content/uploads/2023/03/hm_sld2.jpg",
+    "https://apollosupplychain.com/cms/wp-content/uploads/2023/03/hm_sld1.jpg",
+    "https://apollosupplychain.com/cms/wp-content/uploads/2023/03/hm_sld3.jpg",
+    "https://apollosupplychain.com/cms/wp-content/uploads/2023/03/hm_sld3.jpg",
+  ];
+
+  const [currentImage, setCurrentImage] = useState(images[0]);
+
+  const handleCurrentImage = (index) => {
+    setCurrentImage(images[index]);
+  };
 
   const buttonVariants = {
     rest: {
@@ -60,8 +74,8 @@ const TheEdge = () => {
       <div className="max-w-7xl mx-auto py-16 md:py-32">
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 flex flex-row justify-center gap-6">
-            <div className="relative overflow-hidden">
-              <img src={LogisticImage} alt="The Edge" />
+            <div className="relative overflow-hidden self-center mr-6">
+              <img src={currentImage} alt="The Edge" />
             </div>
           </div>
 
@@ -79,7 +93,10 @@ const TheEdge = () => {
               transportation services.
             </p>
 
-            <ApolloAccordion items={accordionItems} />
+            <ApolloAccordion
+              items={accordionItems}
+              setCurrentImage={handleCurrentImage}
+            />
 
             <div className="flex items-center justify-start">
               <MotionLink

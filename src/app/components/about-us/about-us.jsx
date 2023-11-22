@@ -44,7 +44,7 @@ const HomeAboutUs = ({ data }) => {
     <section className="relative px-3 md:px-5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row py-16 md:py-32">
         <div className="flex-1 flex flex-row gap-6">
-          <div className="relative overflow-hidden rounded-lg -mt-0: md:-mt-10">
+          <div className="relative overflow-hidden rounded-lg min-h-full mt-[25px]">
             <motion.img
               variants={imageVariants}
               initial="hidden"
@@ -54,7 +54,7 @@ const HomeAboutUs = ({ data }) => {
               className="w-96 object-cover rounded-lg"
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 mt-[25px]">
             <div className="relative overflow-hidden rounded-lg w-full">
               <motion.img
                 variants={imageVariants}
@@ -81,13 +81,13 @@ const HomeAboutUs = ({ data }) => {
         <motion.div
           initial="hidden"
           whileInView="whileInView"
-          className="flex-1 px-6 flex flex-col gap-3"
+          className="flex-1 px-6 flex flex-col gap-3 mt-[20px]"
         >
           <motion.h1
             variants={textVariants}
             className="text-[28px] md:text-5xl font-medium text-main-text"
           >
-            {data.aboutMainHeading}
+            {data.aboutMainHeading ?? "Discover Our Legacy"}
           </motion.h1>
 
           <motion.p variants={textVariants} className="text-body-text">

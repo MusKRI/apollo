@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import * as Select from "@radix-ui/react-select";
+import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import SelectItem from "./select-item";
 
 import "./contact-form-section.css";
 
@@ -99,7 +102,7 @@ const ContactFormSection = () => {
 
           <div className="mt-4 flex flex-col gap-4 self-stretch">
             <div className="form__group field">
-              <input
+              {/* <input
                 type="input"
                 className="form__field"
                 placeholder="Name"
@@ -107,7 +110,40 @@ const ContactFormSection = () => {
               />
               <label htmlFor="name" className="form__label">
                 I&apos;m interested in*
-              </label>
+              </label> */}
+              <Select.Root>
+                <Select.Trigger
+                  className="border w-full flex items-center justify-center rounded px-[15px] text-[13px] leading-none h-[35px] gap-[5px] bg-white text-violet11 shadow-[0_2px_10px] shadow-black/10 hover:bg-mauve3 focus:shadow-[0_0_0_2px] focus:shadow-black data-[placeholder]:text-violet9 outline-none"
+                  aria-label="Food"
+                >
+                  <Select.Value placeholder="Select a Business" />
+                  <Select.Icon className="text-violet11">
+                    <ChevronDownIcon />
+                  </Select.Icon>
+                </Select.Trigger>
+                <Select.Portal>
+                  <Select.Content className="overflow-hidden bg-white rounded-md shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]">
+                    <Select.ScrollUpButton className="flex items-center justify-center h-[25px] bg-white text-violet11 cursor-default">
+                      <ChevronUpIcon />
+                    </Select.ScrollUpButton>
+                    <Select.Viewport className="p-[5px]">
+                      <Select.Group>
+                        <Select.Label className="px-[25px] text-xs leading-[25px] text-mauve11">
+                          Fruits
+                        </Select.Label>
+                        <SelectItem value="supply chain">
+                          Supply Chain
+                        </SelectItem>
+                        <SelectItem value="fashion">Fashion Page</SelectItem>
+                        <SelectItem value="marketplace">
+                          Market Place
+                        </SelectItem>
+                        <SelectItem value="prox">ProX</SelectItem>
+                      </Select.Group>
+                    </Select.Viewport>
+                  </Select.Content>
+                </Select.Portal>
+              </Select.Root>
             </div>
 
             <div className="form__group field">

@@ -46,7 +46,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/aboutus" className="text-white">
                     Apollo Green Energy
                   </Link>
                 </motion.div>
@@ -56,7 +56,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/supply-chain" className="text-white">
                     Apollo Supply Chain
                   </Link>
                 </motion.div>
@@ -66,7 +66,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/fashion" className="text-white">
                     Apollo Fashion
                   </Link>
                 </motion.div>
@@ -76,7 +76,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/contact" className="text-white">
                     Apollo ProX
                   </Link>
                 </motion.div>
@@ -86,7 +86,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/supply-chain" className="text-white">
                     Apollo Marketplace
                   </Link>
                 </motion.div>
@@ -108,7 +108,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/aboutus" className="text-white">
                     Who We Are
                   </Link>
                 </motion.div>
@@ -118,7 +118,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/aboutus" className="text-white">
                     Purpose & Values
                   </Link>
                 </motion.div>
@@ -128,7 +128,7 @@ const Footer = () => {
                   className="flex flex-row items-center gap-2"
                 >
                   <span className="w-2 h-2 bg-white" />
-                  <Link to="#" className="text-white">
+                  <Link to="/aboutus" className="text-white">
                     Leadership
                   </Link>
                 </motion.div>

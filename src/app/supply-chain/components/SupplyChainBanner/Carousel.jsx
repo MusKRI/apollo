@@ -1,53 +1,97 @@
-// **** Library Imports ****
-import { Splide, SplideTrack, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import { useState, useEffect } from "react";
+import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
 import "./carousel.css";
 
-// **** Local Imports ****
-// import CarouselItem from "./CarouselItem";
+export function ImageCarousel({ images }) {
+  const [animation, setAnimation] = useState({
+    direction: "stop",
+    imageIndex: 0,
+  });
 
-const SupplyChainCarousel = ({ slideNodes }) => {
+  const getSecondImageIndex = (currIndex, dir) => {
+    return dir === "stop"
+      ? currIndex
+      : (currIndex + (dir === "right" ? 1 : -1) + images.length) %
+          images.length;
+  };
+
+  const onNext = () => {
+    if (animation.direction === "stop") {
+      setAnimation({
+        ...animation,
+        direction: "right",
+      });
+    }
+  };
+
+  const onPrevious = () => {
+    if (animation.direction === "stop") {
+      setAnimation({
+        ...animation,
+        direction: "left",
+      });
+    }
+  };
+
+  const onTransitionEnd = () => {
+    setAnimation((prevAnimation) => ({
+      ...prevAnimation,
+      direction: "stop",
+      imageIndex: getSecondImageIndex(
+        prevAnimation.imageIndex,
+        prevAnimation.direction
+      ),
+    }));
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (animation.direction === "stop") {
+        setAnimation((prevAnimation) => ({
+          ...prevAnimation,
+          direction: "right",
+        }));
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [animation.direction]);
+
   return (
-    <Splide
-      hasTrack={false}
-      options={{
-        arrows: false,
-        perPage: 1,
-        perMove: 1,
-        focus: "center",
-        pagination: true,
-        gap: "10px",
-      }}
-    >
-      <SplideTrack className="overflow-visible overflow-x-clip">
-        {slideNodes.map((slide) => {
-          return (
-            <SplideSlide key={slide.id} className="">
-              <div className="flex flex-col gap-3 h-full items-center w-full">
-                <div className="relative rounded-lg flex flex-col gap-4">
-                  <img
-                    src={slide.slideImage}
-                    alt="IMG1"
-                    className="rounded-lg w-[300px] lg:w-full"
-                  />
-                  <h4 className="text-xl bg-white text-center">
-                    {slide.slideTitle}
-                  </h4>
-                </div>
-                {/* <p
-                
-                className="text-lg text-[#525252] text-center overflow-hidden"
-              >
-                {imgNode.description}
-              </p> */}
-              </div>
-            </SplideSlide>
-          );
-        })}
-      </SplideTrack>
-    </Splide>
-  );
-};
+    <div className="mx-auto">
+      <div className="max-w-2xl w-[300px] h-[300px] lg:w-[600px] lg:h-[500px] relative overflow-hidden mx-auto">
+        <img
+          className="image firstImage"
+          src={images[animation.imageIndex]}
+          data-animate={animation.direction}
+          onTransitionEnd={onTransitionEnd}
+        />
+        <img
+          className="image"
+          src={
+            images[
+              getSecondImageIndex(animation.imageIndex, animation.direction)
+            ]
+          }
+        />
+      </div>
 
-export default SupplyChainCarousel;
+      {/* Buttons */}
+      <div className="flex flex-row items-center gap-8 mt-10">
+        <button
+          className="border p-2 rounded-full border-gray-300"
+          onClick={onPrevious}
+        >
+          <FiArrowLeft className="w-6 h-6 text-zinc-100" />
+        </button>
+        <button
+          className="border p-2 rounded-full border-gray-300"
+          onClick={onNext}
+        >
+          <FiArrowRight className="w-6 h-6 text-zinc-100" />
+        </button>
+      </div>
+    </div>
+  );
+}

@@ -5,7 +5,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 import { cn } from "../../../lib/utils";
 
-const ApolloAccordion = ({ items }) => {
+const ApolloAccordion = ({ items, setCurrentImage }) => {
   return (
     <div className="">
       <Accordion.Root
@@ -14,12 +14,13 @@ const ApolloAccordion = ({ items }) => {
         defaultValue={`item-1`}
         collapsible
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <AccordionItem
               value={`item-${item.id}`}
               className="border-b"
               key={item.id}
+              onClick={() => setCurrentImage(index)}
             >
               <AccordionTrigger className="text-[#fa951d] text-[12px] md:text-xl font-semibold">
                 {item.triggerItem}
@@ -36,11 +37,12 @@ const ApolloAccordion = ({ items }) => {
 };
 
 const AccordionItem = React.forwardRef(
-  ({ children, className, ...props }, forwardedRef) => (
+  ({ children, className, onClick, ...props }, forwardedRef) => (
     <Accordion.Item
       className={cn("mt-px overflow-hidden first:mt-0", className)}
       {...props}
       ref={forwardedRef}
+      onClick={onClick}
     >
       {children}
     </Accordion.Item>
