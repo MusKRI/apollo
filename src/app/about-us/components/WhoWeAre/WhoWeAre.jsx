@@ -44,7 +44,7 @@ const WhoWeAre = ({ data }) => {
             return (
               <motion.div
                 layout="position"
-                className="flex flex-col gap-3 h-full w-72 items-center"
+                className="flex flex-row gap-8 h-full items-center"
                 key={imgNode.id}
                 initial={{
                   y: 60,
@@ -61,7 +61,7 @@ const WhoWeAre = ({ data }) => {
                   },
                 }}
               >
-                <motion.div className="relative w-64 h-60 border-2 border-black rounded-lg p-4 flex flex-col gap-4">
+                <motion.div className="relative w-96 rounded-lg p-4 flex flex-col gap-4">
                   <motion.img
                     layout="size"
                     initial={{
@@ -81,8 +81,11 @@ const WhoWeAre = ({ data }) => {
                     }}
                     src={imgNode.img}
                     alt="IMG1"
-                    className="rounded-lg -mt-12 w-60 h-48"
+                    className="rounded-lg w-96"
                   />
+                </motion.div>
+
+                <div className="flex flex-col gap-3 max-w-lg">
                   <motion.h4
                     initial={{ opacity: 0 }}
                     whileInView={{
@@ -92,30 +95,31 @@ const WhoWeAre = ({ data }) => {
                         delay: 0.8,
                       },
                     }}
-                    className="text-xl bg-white -ml-10"
+                    className="text-xl bg-white"
                   >
                     {imgNode.title}
                   </motion.h4>
-                </motion.div>
-                <motion.p
-                  initial={{
-                    y: 100,
-                    opacity: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
-                  whileInView={{
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }}
-                  className="text-lg text-[#525252] text-center overflow-hidden"
-                >
-                  {imgNode.description}
-                </motion.p>
+
+                  <motion.p
+                    initial={{
+                      y: 100,
+                      opacity: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    whileInView={{
+                      y: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }}
+                    className="text-lg text-[#525252] overflow-hidden"
+                  >
+                    {imgNode.description}
+                  </motion.p>
+                </div>
               </motion.div>
             );
           })}

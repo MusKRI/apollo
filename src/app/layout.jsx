@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => {
 
   useEffect(() => {
     someRequest().then(() => {
-      const loaderElement = document.querySelector(".loader-container");
+      const loaderElement = document.querySelector(".loader-box");
       if (loaderElement) {
         loaderElement.remove();
         setLoading(!isLoading);
