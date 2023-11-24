@@ -60,7 +60,7 @@ const navLinks = [
       {
         id: "marketplace",
         label: "Marketplace",
-        slug: "#",
+        slug: "/marketplace",
       },
       {
         id: "prox",
@@ -97,7 +97,7 @@ const navLinks = [
     id: "careers",
     label: "Careers",
     children: null,
-    slug: "#",
+    slug: "/career",
   },
 
   {

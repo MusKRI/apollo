@@ -13,6 +13,8 @@ import BlogsPage from "./app/blogs/page";
 import NewsPage from "./app/news/page";
 import PeoplePlanet from "./app/people-planet/page";
 import { Fashion } from "./app/fashion/page";
+import Career from "./app/career/page";
+import { MarketPlace } from "./app/marketplace/page";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/people-planet" element={<PeoplePlanet />} />
         <Route path="/fashion" element={<Fashion />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/marketplace" element={<MarketPlace />} />
       </Routes>
     </RootLayout>
   );
