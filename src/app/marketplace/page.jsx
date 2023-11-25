@@ -1,17 +1,26 @@
 import HomeMap from "../components/map/map";
 
+import Banner from "./images/banner.jpg";
+
 export const MarketPlace = () => {
   let data = {
-    description: "Redefining Global Trade & Commerce",
+    bannerDescription: "Redefining Global Trade & Commerce",
+    bannerImage: Banner,
     bgImage:
       "https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 464w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 764w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 928w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1064w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1364w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1528w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1664w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1964w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2128w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2264&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2264w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2564w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2728w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 2864w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 3164w, https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=3308&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 3308w",
+
+    // Apollo Green Energy Limited
+    agTitle: "Apollo Green Energy Limited",
+    agDescription:
+      "is a trading and distribution company with a widespread presence across over 45 countries. As a part of the esteemed business conglomerate, the Apollo Green Energy Limited, we are deeply committed to upholding the highest standards of ethics in all our business endeavors. With a dedicated team of over 1000+ employees, our core focus revolves around providing exceptional customer-centric solutions. With over three decades of experience, we have established ourselves as trusted partners in the global marketplace. Explore our offerings and discover how our rich legacy and global network can benefit your business.",
+    agImage: "",
   };
 
   return (
     <>
       <div
         className="relative h-[calc(100vh-72px)]"
-        style={{ maxHeight: "30%" }}
+        style={{ maxHeight: "30%", background: `url(${data?.bannerImage})` }}
       >
         <div className="absolute inset-0 top-0 z-[1] backdrop-brightness-[0.5] px-3 md:px-5">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 py-16 h-full">
@@ -21,13 +30,13 @@ export const MarketPlace = () => {
             </div>
 
             <div className="flex flex-col gap-5">
-              <h1 className="text-white text-5xl lg:text-7xl font-semibold">
-                {data.heading}
+              <h1 className="text-white text-5xl lg:text-7xl font-semibold max-w-md">
+                {data.bannerDescription}
               </h1>
 
-              <p className="text-white max-w-md text-lg ml-4 lg:ml-20">
-                {data.description}
-              </p>
+              {/* <p className="text-white max-w-md text-lg ml-4 lg:ml-20">
+                {data.bannerDescription}
+              </p> */}
             </div>
           </div>
         </div>
@@ -54,35 +63,14 @@ export const MarketPlace = () => {
               <div className="col-12 mt-4 d-flex justify-content-start">
                 <div className="container">
                   <h1 style={{ fontWeight: "750", fontSize: "25px" }}>
-                    Apollo Green evergy Limited
+                    {data?.agTitle}
                   </h1>
                 </div>
               </div>
-              <div className="col-10 mb-4" style={{ marginBottom: "-200px" }}>
+              <div className="col-8 mb-4" style={{ marginBottom: "-50px" }}>
                 <div className="container">
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Reiciendis enim ullam error quam hic aliquid, omnis vitae
-                    natus! Quibusdam, explicabo necessitatibus? Aut harum vel
-                    doloremque assumenda. Aliquam optio iure modi. Consectetur,
-                    expedita cumque. Obcaecati distinctio, nihil, iure maxime ex
-                    temporibus odit quibusdam vel praesentium earum porro?
-                    Architecto eveniet consequatur ex quibusdam voluptatum
-                    aliquam inventore officiis, iure odio illum sint iste!
-                    Tempore quos reprehenderit deserunt, amet blanditiis
-                    corrupti nemo neque. Quia quod mollitia enim, modi
-                    laudantium tempore repudiandae accusantium quaerat illo,
-                    animi repellendus consequatur, aliquid neque. Odio harum
-                    iste voluptatem quod. Consequuntur ex facere iusto, itaque,
-                    veniam pariatur laudantium, quos eligendi aperiam doloribus
-                    quidem odit doloremque quae. Praesentium, consequuntur
-                    dolorem expedita deleniti suscipit delectus iusto impedit
-                    cum obcaecati facilis dignissimos! Quasi. voluptatem quod.
-                    Consequuntur ex facere iusto, itaque, veniam pariatur
-                    laudantium, quos eligendi aperiam doloribus quidem odit
-                    doloremque quae. Praesentium, consequuntur dolorem expedita
-                    deleniti suscipit delectus iusto impedit cum obcaecati
-                    facilis dignissimos! Quasi
+                    {data?.agDescription}
                   </p>
                 </div>
               </div>
