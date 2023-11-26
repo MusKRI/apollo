@@ -15,6 +15,7 @@ import PeoplePlanet from "./app/people-planet/page";
 import { Fashion } from "./app/fashion/page";
 import Career from "./app/career/page";
 import { MarketPlace } from "./app/marketplace/page";
+import ProXPage from "./app/prox/page";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/career" element={<Career />} />
         <Route path="/marketplace" element={<MarketPlace />} />
+        <Route path="/prox" element={<ProXPage />} />
       </Routes>
     </RootLayout>
   );
