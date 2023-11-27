@@ -1,5 +1,8 @@
 // **** Library imports *****
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+
+// local imports
+import Imgs from "./images/imgs2.jpeg";
 
 // const imgNodes = [
 //   {
@@ -13,119 +16,24 @@ import { motion } from "framer-motion";
 
 const WhoWeAre = ({ data }) => {
   return (
-    <section className="relative px-3 md:px-5">
-      <div className="max-w-7xl mx-auto flex flex-col py-16 md:py-32">
-        <div className="flex flex-col gap-7 items-center">
-          <h2 className="text-green text-center text-2xl">{data?.subtitle}</h2>
-          <h1 className="text-6xl">{data?.title}</h1>
-        </div>
-
-        <motion.div
-          layout="position"
-          className="mt-20 flex flex-row items-center flex-wrap justify-center gap-10"
-          initial={{
-            y: 60,
-            opacity: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            transition: {
-              when: "beforeChildren",
-              staggerChildren: 0.3,
-              duration: 0.8,
-            },
-          }}
-        >
-          {data?.nodes.map((imgNode) => {
-            return (
-              <motion.div
-                layout="position"
-                className="flex flex-row gap-8 h-full items-center"
-                key={imgNode.id}
-                initial={{
-                  y: 60,
-                  opacity: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    when: "beforeChildren",
-                  },
-                }}
-              >
-                <motion.div className="relative w-96 rounded-lg p-4 flex flex-col gap-4">
-                  <motion.img
-                    layout="size"
-                    initial={{
-                      height: 0,
-                      opacity: 0,
-                    }}
-                    whileInView={{
-                      height: "100%",
-                      opacity: 1,
-                      transition: {
-                        duration: 0.8,
-                        delay: 0.8,
-                      },
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    src={imgNode.img}
-                    alt="IMG1"
-                    className="rounded-lg w-96"
-                  />
-                </motion.div>
-
-                <div className="flex flex-col gap-3 max-w-lg">
-                  <motion.h4
-                    initial={{ opacity: 0 }}
-                    whileInView={{
-                      opacity: 1,
-                      transition: {
-                        duration: 0.8,
-                        delay: 0.8,
-                      },
-                    }}
-                    className="text-xl bg-white"
-                  >
-                    {imgNode.title}
-                  </motion.h4>
-
-                  <motion.p
-                    initial={{
-                      y: 100,
-                      opacity: 0,
-                    }}
-                    viewport={{
-                      once: true,
-                    }}
-                    whileInView={{
-                      y: 0,
-                      opacity: 1,
-                      transition: {
-                        duration: 0.8,
-                      },
-                    }}
-                    className="text-lg text-[#525252] overflow-hidden"
-                  >
-                    {imgNode.description}
-                  </motion.p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+    <div className="relative h-[60vh]">
+      <div className="img-gradient">
+        <img
+          src={data.image ?? Imgs}
+          alt="Contact Banner"
+          className="h-[60vh] max-w-full w-full min-w-0 object-cover"
+        />
       </div>
-    </section>
+
+      <div className="absolute top-0 left-0 z-10 w-full h-full flex items-center p-10 md:p-20">
+        <div className="flex flex-col gap-10">
+          <p className="text-white max-w-xl text-lg md:text-xl">
+            {data?.nodes?.title}
+            {data?.nodes?.description}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 

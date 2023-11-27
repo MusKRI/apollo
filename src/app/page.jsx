@@ -17,7 +17,6 @@ import Business from "./components/business/business";
 
 // import ContactMap from "./contact-us/components/map/map";
 import NewSection from "./components/new/new";
-import Map from "./map";
 import { useEffect, useState } from "react";
 import HomeMap from "./components/map/map";
 

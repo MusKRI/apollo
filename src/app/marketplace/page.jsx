@@ -1,4 +1,4 @@
-import HomeMap from "../components/map/map";
+import HomeMap from "./components/map/map";
 
 import Banner from "./images/banner.jpg";
 
@@ -69,9 +69,7 @@ export const MarketPlace = () => {
               </div>
               <div className="col-8 mb-4" style={{ marginBottom: "-50px" }}>
                 <div className="container">
-                  <p>
-                    {data?.agDescription}
-                  </p>
+                  <p>{data?.agDescription}</p>
                 </div>
               </div>
             </div>

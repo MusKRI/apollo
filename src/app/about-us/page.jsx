@@ -35,15 +35,12 @@ const AboutUs = () => {
     // who we are data
     whoweareSubtitle: "About us",
     whoweareTitle: "Who We Are",
-    whoweareNodes: [
-      {
-        id: "1",
-        img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
-        title: "Excepteur sint occaecat",
-        description:
-          "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
-      },
-    ],
+    whoweareNodes: {
+      img: "https://images.unsplash.com/photo-1534709153997-d6659469f951?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80",
+      title: "Excepteur sint occaecat",
+      description:
+        "Excepteur sint occaecat cupdatat non proident, sunt in culpa qui officia deserunt anim id est laborum.",
+    },
 
     // purpose values
     purposeValuesSubtitle: "About Us",

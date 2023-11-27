@@ -2,46 +2,57 @@ import CareerBanner from "./components/career-banner/career-banner";
 
 import BannerImg from "./images/banner.jpeg";
 
+import sq2 from "./images/sq2.png";
+import ForceofFive from "./images/forceoffive.png";
+import d1 from "./images/d1.png";
+import d2 from "./images/d2.png";
+import d3 from "./images/d3.png";
+import d4 from "./images/d4.png";
+import d5 from "./images/d5.png";
+
 const Career = () => {
   let CardData = [
     {
-      Title: " lorem lorem lorem lorem",
+      Title: "Product Designer",
+      Subtitle:
+        "We are looking for  a mid-level product designer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
     {
-      Title: "lorem lorem lorem lorem",
+      Title: "Content Writer",
+      Subtitle:
+        "We are looking for  a mid-level Content Writer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
 
     {
-      Title: "lorem lorem lorem lorem",
+      Title: "Product Designer",
+      Subtitle:
+        "We are looking for a mid-level product designer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
     {
-      Title: "lorem lorem lorem lorem",
+      Title: "Product Designer",
+      Subtitle:
+        "We are looking for  a mid-level product designer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
     {
-      Title: "lorem lorem lorem lorem",
+      Title: "Content Writer",
+      Subtitle:
+        "We are looking for  a mid-level Content Writer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
+
     {
-      Title: "lorem lorem lorem lorem",
-      status: "Active",
-      icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
-    },
-    {
-      Title: "lorem lorem lorem lorem",
-      status: "Active",
-      icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
-    },
-    {
-      Title: "lorem lorem lorem lorem",
+      Title: "Product Designer",
+      Subtitle:
+        "We are looking for a mid-level product designer to join our team.",
       status: "Active",
       icon: "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
     },
@@ -49,29 +60,30 @@ const Career = () => {
 
   let ForceFive = [
     {
-      name: "Lorem",
+      name: "Own It",
       description:
-        "	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis et quaerat possimus?",
+        "The entrepreneurial spirit runs strong at Apollo Green Energy. We encourage our people to think big and own their work.",
     },
     {
-      name: "Lorem",
+      name: "Do The Right",
       description:
-        "	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis et quaerat possimus?",
+        "Thing Integrity is the foundation for everything we do. We are admired and respected for our commitment to honesty, trust, and transparency. We do the right thing — even when no one is watching.",
     },
     {
-      name: "Lorem",
+      name: "Be The Next",
       description:
-        "	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis et quaerat possimus?",
+        "We strive to set the highest standard of quality in everything we do. We always want to drive towards the next great thing by constantly challenging ourselves to improve and break new ground.",
     },
     {
-      name: "Lorem",
+      name: "Action Is Our First Instinct",
       description:
-        "	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis et quaerat possimus?",
+        "We only succeed when our clients do — and that drives us. Our people will overcome obstacles, find solutions, and deliver exceptional results that help our clients be ahead",
     },
+
     {
-      name: "Lorem",
+      name: "Stronger United",
       description:
-        "	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis et quaerat possimus?",
+        "We’ve created a positive and inclusive culture that fosters open, honest, and meaningful relationships. We celebrate and embrace our diversity, finding ways for everyone to belong.",
     },
   ];
 
@@ -91,55 +103,42 @@ const Career = () => {
         <div className="row">
           <div
             className="col-12 mt-5"
-            style={{ backgroundColor: " rgb(17 79 170)", color: "white" }}
+            style={{ backgroundColor: "#2e3192", color: "white" }}
           >
             <div className="row">
-              <div className="collage col-12">
+              <div className="collage col-12 flex items-center justify-center">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                  src={sq2}
                   alt=""
-                  style={{ width: "100%", height: "100px" }}
+                  // style={{ width: "100%", height: "100px" }}
                 />
               </div>
               <div className="col-12">
                 <div className="container-fluid mt-5">
                   <div className="row justify-content-center">
                     <div className="col-9">
-                      <p style={{ fontWeight: "bold" }}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dolorem, ducimus? Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit.
+                      <p style={{ fontWeight: "bold" }} className="text-2xl">
+                        Life At Apollo Green Energy: Join Our Vision, Shape Your
+                        Future
                       </p>
                     </div>
                     <div className="col-9 mt-2 mb-5">
                       <div className="row">
                         <div className="col-8">
                           <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Maiores quis quasi commodi possimus aliquid,
-                            at consequatur? Assumenda sit quas repellendus
-                            beatae modi consectetur blanditiis. Dignissimos
-                            reiciendis aperiam explicabo magni delectus nobis
-                            accusantium ea possimus nisi incidunt. Inventore
-                            distinctio impedit praesentium expedita animi, cum
-                            ut dolor, adipisci aperiam tempora quasi soluta.
+                            Apollo Green Energy offers an inspiring environment,
+                            fosters an inclusive work culture that thrives on
+                            diversity, offering an inspiring environment and
+                            work-life balance for all.
                           </p>
                           <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Tempora nam, temporibus similique quos alias,
-                            mollitia porro quae eius tempore officiis facilis
-                            omnis qui soluta cupiditate dignissimos velit
-                            voluptatum minus. Cum at rerum molestiae veniam hic
-                            est suscipit ullam optio? Laboriosam consectetur,
-                            exercitationem dolor quos quisquam temporibus illum
-                            odio harum quod perspiciatis maiores ipsum veritatis
-                            optio error necessitatibus eveniet officia tenetur
-                            nemo, vitae veniam placeat animi ratione totam! Quos
-                            hic sunt ducimus ex sit voluptatum eius perferendis
-                            dignissimos architecto excepturi quo necessitatibus,
-                            aspernatur fuga, ea neque dolor culpa molestias
-                            atque, debitis numquam ullam quaerat doloribus
-                            asperiores sapiente! Quaerat fugiat illum harum.
+                            At Apollo Green Energy, we're committed to offering
+                            more than just employment. We create fresh career
+                            opportunities that intersect with our business,
+                            enabling you to unleash your full potential while
+                            driving our growth forward. We firmly believe that
+                            our employees, with their innovative skills, are the
+                            driving force behind our operational efficiency
                           </p>
                         </div>
                       </div>
@@ -160,11 +159,7 @@ const Career = () => {
                 </div>
                 <div className="col-lg-4 mt-3">
                   <div className="row">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
-                      alt=""
-                      style={{ maxWidth: "40%" }}
-                    />
+                    <img src={ForceofFive} alt="" style={{ maxWidth: "60%" }} />
                   </div>
                 </div>
                 <div className="col-lg-8">
@@ -208,7 +203,7 @@ const Career = () => {
           {/* Discovery Section */}
           <div
             className="col-12 mb-5 mt-5 pt-5"
-            style={{ backgroundColor: " rgb(17 79 170)", color: "white" }}
+            style={{ backgroundColor: "#2e3192", color: "white" }}
           >
             <div className="container">
               <div className="row">
@@ -216,33 +211,24 @@ const Career = () => {
                   className="col-12 mt-3"
                   style={{ fontWeight: "bold", fontSize: "25px" }}
                 >
-                  <p>Lorem ipsum dolor sit.</p>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.{" "}
-                  </p>
+                  <p>Discover what makes Apollo</p>
+                  <p>Green Energy a Sought-after Employer: </p>
                 </div>
                 <div className="col-12 mb-5  mt-5">
                   <div className="row">
                     <div className="col-lg-4 d-flex justify-content-center">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
-                        alt=""
-                        style={{ maxWidth: "60%" }}
-                      />
+                      <img src={d1} alt="" style={{ maxWidth: "60%" }} />
                     </div>
                     <div className="col-lg-4 mt-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Sit ad excepturi repellendus ipsa obcaecati laudantium,
-                      mollitia quia numquam rerum laborum totam expedita ea
-                      saepe odit ullam exercitationem ducimus. Voluptatibus
-                      reiciendis iusto explicabo!
+                      A strong, consistent, and meritocratic HR framework helps
+                      Apollo Green Energy in maintaining a forward-thinking work
+                      environment where talent with a purpose is drawn and
+                      engaged. The entrepreneurial culture at Apollo Green
+                      Energy attempts to inspire all employees to play an
+                      integral role in the organisation’s growth.
                     </div>
                     <div className="col-lg-4 d-flex justify-content-space-around align=items-start">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
-                        alt=""
-                        style={{ maxWidth: "30%" }}
-                      />
+                      <img src={d2} alt="" />
                     </div>
                   </div>
                 </div>
@@ -250,23 +236,26 @@ const Career = () => {
                   <div className="row">
                     <div className="col-4">
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                        src={d3}
                         alt=""
                         style={{ maxWidth: "70%" }}
+                        className="rounded-t-full"
                       />
                     </div>
                     <div className="col-4">
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                        src={d4}
                         alt=""
                         style={{ maxWidth: "70%" }}
+                        className="rounded-t-full"
                       />
                     </div>
                     <div className="col-4">
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                        src={d5}
                         alt=""
                         style={{ maxWidth: "70%" }}
+                        className="rounded-t-full"
                       />
                     </div>
                   </div>
@@ -275,49 +264,33 @@ const Career = () => {
                   <div className="row">
                     <div className="col-12 headings mt-3">
                       <div className="row">
-                        <div className="col-4">lorem ipsum lorem ipsum</div>
-                        <div className="col-4">lorem ipsum lorem ipsum</div>
-                        <div className="col-4"> lorem ipsum lorem ipsum</div>
+                        <div className="col-4">Learning and Development</div>
+                        <div className="col-4">Diversity and Inclusion</div>
+                        <div className="col-4">Growth Opportunities</div>
                       </div>
                     </div>
                     <div className="col-12 content mt-3">
                       <div className="row">
                         <div className="col-4">
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Repellendus illum, aliquam ut nostrum voluptatum
-                          commodi quod animi voluptatibus! Qui, voluptatem.
-                          Rerum quod impedit veritatis consectetur. Cupiditate
-                          error similique repellat consectetur! Eligendi
-                          laboriosam maiores debitis doloribus possimus vitae
-                          deleniti quae commodi pariatur qui incidunt officiis
-                          error quo quasi non architecto accusamus impedit,
-                          exercitationem illo quia sequi reprehenderit rerum
-                          voluptate? Odit, adipisci.
+                          Apollo Green Energy nurtures high-potential people
+                          inside the organization and offers them opportunities
+                          for accelerated learning and development. There are
+                          various vertical and team-level initiatives that help
+                          hone the skills while, on the job
                         </div>
                         <div className="col-4">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Nesciunt iste nam doloremque, voluptatum amet
-                          pariatur ex exercitationem iusto nostrum porro culpa
-                          nulla! Odit beatae autem voluptatibus illo quas minus
-                          aliquam? Quas a at reprehenderit! Iure veniam
-                          asperiores aspernatur recusandae, eveniet sequi ad,
-                          dolorem nulla minus placeat excepturi ipsa similique
-                          id nisi ab dolor laboriosam! Veritatis unde deleniti
-                          cupiditate et sed?
+                          Apollo Green Energy is made up of people representing
+                          diverse nationalities, cultures, genders, abilities,
+                          age, and experiences. This creates a very enriching
+                          and holistic working environment where every employee
+                          engages, contributes, and eventually grows in the
+                          workplace.
                         </div>
                         <div className="col-4">
-                          Lorem ipsum dolor sit, amet consectetur adipisicing
-                          elit. Aliquam reprehenderit nihil culpa fugit
-                          provident in aspernatur. Iste, minima ipsam? Explicabo
-                          fugit nobis deserunt, fugiat ducimus error vero velit
-                          officia provident perferendis. Sed adipisci
-                          repellendus, architecto dolor error delectus
-                          temporibus nihil atque odio, consequuntur officiis
-                          quaerat aperiam. Sed, autem. Nostrum unde voluptatibus
-                          reiciendis! Magnam, ratione! Molestiae harum, fugiat
-                          ipsam earum officiis enim quibusdam odit officia error
-                          esse sit eius suscipit laudantium maiores eos corporis
-                          ex ea? Quidem cumque ad id nemo corporis cupiditate.
+                          Our businesses are shaping key sectors of the modern
+                          economy. This creates an abundance of opportunities
+                          for people to shine, learn a ton and create a massive
+                          impact.
                         </div>
                       </div>
                     </div>
@@ -376,17 +349,17 @@ const Career = () => {
                             </div>
                             <div className="card-subtitle mb-2 text-muted">
                               <div className="row">
-                                <div className="col-6 d-flex">
-                                  lorem ipsum lorem ipsum
+                                <div className="col-8 d-flex">
+                                  {self?.Subtitle}
                                 </div>
                               </div>
                             </div>
-                            <a href="#" className="card-link">
+                            {/* <a href="#" className="card-link">
                               Card link
                             </a>
                             <a href="#" className="card-link">
                               Another link
-                            </a>
+                            </a> */}
                           </div>
                         </div>
                       </div>
