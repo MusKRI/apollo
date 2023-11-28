@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+
 import CareerBanner from "./components/career-banner/career-banner";
 
 import BannerImg from "./images/banner.jpeg";
 
-import sq2 from "./images/sq2.png";
-import ForceofFive from "./images/forceoffive.png";
+import sq2 from "./images/life.jpeg";
+import ForceofFive from "./images/forceoffive2.jpeg";
 import d1 from "./images/d1.png";
 import d2 from "./images/d2.png";
 import d3 from "./images/d3.png";
@@ -102,36 +104,89 @@ const Career = () => {
       <div className="container-fluid">
         <div className="row">
           <div
-            className="col-12 mt-5"
-            style={{ backgroundColor: "#2e3192", color: "white" }}
+            className="col-12 py-10"
+            style={{ backgroundColor: "#333694", color: "white" }}
           >
-            <div className="row">
-              <div className="collage col-12 flex items-center justify-center">
+            <div className="row flex flex-col items-center">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                  transition: {
+                    duration: 0.8,
+                  },
+                }}
+                className="collage col-12 flex items-center justify-center w-[500px]"
+              >
                 <img
                   src={sq2}
                   alt=""
+                  className="rounded-md"
                   // style={{ width: "100%", height: "100px" }}
                 />
-              </div>
+              </motion.div>
               <div className="col-12">
                 <div className="container-fluid mt-5">
                   <div className="row justify-content-center">
                     <div className="col-9">
-                      <p style={{ fontWeight: "bold" }} className="text-2xl">
+                      <motion.h1
+                        initial={{
+                          opacity: 0,
+                          x: -100,
+                        }}
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                          transition: {
+                            duration: 0.8,
+                          },
+                        }}
+                        className="text-3xl font-semibold"
+                      >
                         Life At Apollo Green Energy: Join Our Vision, Shape Your
                         Future
-                      </p>
+                      </motion.h1>
                     </div>
                     <div className="col-9 mt-2 mb-5">
                       <div className="row">
                         <div className="col-8">
-                          <p>
+                          <motion.p
+                            initial={{
+                              opacity: 0,
+                              x: -100,
+                            }}
+                            whileInView={{
+                              opacity: 1,
+                              x: 0,
+                              transition: {
+                                duration: 0.8,
+                              },
+                            }}
+                            className="text-lg"
+                          >
                             Apollo Green Energy offers an inspiring environment,
                             fosters an inclusive work culture that thrives on
                             diversity, offering an inspiring environment and
                             work-life balance for all.
-                          </p>
-                          <p>
+                          </motion.p>
+                          <motion.p
+                            initial={{
+                              opacity: 0,
+                              x: -100,
+                            }}
+                            whileInView={{
+                              opacity: 1,
+                              x: 0,
+                              transition: {
+                                duration: 0.8,
+                              },
+                            }}
+                            className="text-lg"
+                          >
                             At Apollo Green Energy, we're committed to offering
                             more than just employment. We create fresh career
                             opportunities that intersect with our business,
@@ -139,7 +194,7 @@ const Career = () => {
                             driving our growth forward. We firmly believe that
                             our employees, with their innovative skills, are the
                             driving force behind our operational efficiency
-                          </p>
+                          </motion.p>
                         </div>
                       </div>
                     </div>
@@ -153,14 +208,40 @@ const Career = () => {
             <div className="container  mb-5">
               <div className="row">
                 <div className="col-12">
-                  <h1 style={{ fontWeight: "bold", fontSize: "55px" }}>
+                  <motion.h1
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }}
+                    style={{ fontWeight: "bold", fontSize: "55px" }}
+                  >
                     Force of Five
-                  </h1>
+                  </motion.h1>
                 </div>
                 <div className="col-lg-4 mt-3">
-                  <div className="row">
-                    <img src={ForceofFive} alt="" style={{ maxWidth: "60%" }} />
-                  </div>
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      x: -100,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }}
+                    className="row"
+                  >
+                    <img src={ForceofFive} alt="" className="rounded-md" />
+                  </motion.div>
                 </div>
                 <div className="col-lg-8">
                   <div className="row">
@@ -202,7 +283,7 @@ const Career = () => {
           </div>
           {/* Discovery Section */}
           <div
-            className="col-12 mb-5 mt-5 pt-5"
+            className="col-12 mb-5 mt-5 py-5"
             style={{ backgroundColor: "#2e3192", color: "white" }}
           >
             <div className="container">
@@ -211,52 +292,155 @@ const Career = () => {
                   className="col-12 mt-3"
                   style={{ fontWeight: "bold", fontSize: "25px" }}
                 >
-                  <p>Discover what makes Apollo</p>
-                  <p>Green Energy a Sought-after Employer: </p>
+                  <motion.p
+                    initial={{
+                      opacity: 0,
+                      x: -100,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }}
+                  >
+                    Discover what makes Apollo
+                  </motion.p>
+                  <motion.p
+                    initial={{
+                      opacity: 0,
+                      x: -100,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }}
+                  >
+                    Green Energy a Sought-after Employer:{" "}
+                  </motion.p>
                 </div>
                 <div className="col-12 mb-5  mt-5">
                   <div className="row">
-                    <div className="col-lg-4 d-flex justify-content-center">
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.8,
+                        },
+                      }}
+                      className="col-lg-4 d-flex justify-content-center"
+                    >
                       <img src={d1} alt="" style={{ maxWidth: "60%" }} />
-                    </div>
-                    <div className="col-lg-4 mt-5">
+                    </motion.div>
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.8,
+                        },
+                      }}
+                      className="col-lg-4 mt-5"
+                    >
                       A strong, consistent, and meritocratic HR framework helps
                       Apollo Green Energy in maintaining a forward-thinking work
                       environment where talent with a purpose is drawn and
                       engaged. The entrepreneurial culture at Apollo Green
                       Energy attempts to inspire all employees to play an
                       integral role in the organisation’s growth.
-                    </div>
-                    <div className="col-lg-4 d-flex justify-content-space-around align=items-start">
+                    </motion.div>
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.8,
+                        },
+                      }}
+                      className="col-lg-4 d-flex justify-content-space-around align=items-start"
+                    >
                       <img src={d2} alt="" />
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
                 <div className="col-12">
                   <div className="row">
-                    <div className="col-4">
-                      <img
+                    <div className="col-4 relative">
+                      <motion.img
+                        initial={{
+                          x: 26,
+                          y: -16,
+                        }}
+                        whileInView={{
+                          x: 0,
+                          y: 0,
+                          transition: {
+                            duration: 0.8,
+                          },
+                        }}
                         src={d3}
                         alt=""
                         style={{ maxWidth: "70%" }}
-                        className="rounded-t-full"
+                        className="rounded-t-full relative z-[2]"
                       />
+                      <div className="absolute border -top-4 left-10 w-full h-full max-w-[65%] rounded-t-full z-0"></div>
                     </div>
-                    <div className="col-4">
-                      <img
+                    <div className="col-4 relative">
+                      <motion.img
+                        initial={{
+                          x: 26,
+                          y: -16,
+                        }}
+                        whileInView={{
+                          x: 0,
+                          y: 0,
+                          transition: {
+                            duration: 0.8,
+                          },
+                        }}
                         src={d4}
                         alt=""
                         style={{ maxWidth: "70%" }}
-                        className="rounded-t-full"
+                        className="rounded-t-full relative z-[2]"
                       />
+                      <div className="absolute border -top-4 left-10 w-full h-full max-w-[65%] rounded-t-full z-0"></div>
                     </div>
-                    <div className="col-4">
-                      <img
+                    <div className="col-4 relative">
+                      <motion.img
+                        initial={{
+                          x: 26,
+                          y: -16,
+                        }}
+                        whileInView={{
+                          x: 0,
+                          y: 0,
+                          transition: {
+                            duration: 0.8,
+                          },
+                        }}
                         src={d5}
                         alt=""
                         style={{ maxWidth: "70%" }}
-                        className="rounded-t-full"
+                        className="rounded-t-full relative z-[2]"
                       />
+                      <div className="absolute border -top-4 left-10 w-full h-full max-w-[65%] rounded-t-full z-0"></div>
                     </div>
                   </div>
                 </div>
@@ -264,34 +448,118 @@ const Career = () => {
                   <div className="row">
                     <div className="col-12 headings mt-3">
                       <div className="row">
-                        <div className="col-4">Learning and Development</div>
-                        <div className="col-4">Diversity and Inclusion</div>
-                        <div className="col-4">Growth Opportunities</div>
+                        <motion.div
+                          initial={{
+                            x: -100,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            x: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4 text-2xl"
+                        >
+                          Learning and Development
+                        </motion.div>
+                        <motion.div
+                          initial={{
+                            y: 10,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4 text-2xl"
+                        >
+                          Diversity and Inclusion
+                        </motion.div>
+                        <motion.div
+                          initial={{
+                            x: 100,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            x: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4 text-2xl"
+                        >
+                          Growth Opportunities
+                        </motion.div>
                       </div>
                     </div>
                     <div className="col-12 content mt-3">
                       <div className="row">
-                        <div className="col-4">
+                        <motion.div
+                          initial={{
+                            x: -100,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            x: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4"
+                        >
                           Apollo Green Energy nurtures high-potential people
                           inside the organization and offers them opportunities
                           for accelerated learning and development. There are
                           various vertical and team-level initiatives that help
                           hone the skills while, on the job
-                        </div>
-                        <div className="col-4">
+                        </motion.div>
+                        <motion.div
+                          initial={{
+                            y: 10,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4"
+                        >
                           Apollo Green Energy is made up of people representing
                           diverse nationalities, cultures, genders, abilities,
                           age, and experiences. This creates a very enriching
                           and holistic working environment where every employee
                           engages, contributes, and eventually grows in the
                           workplace.
-                        </div>
-                        <div className="col-4">
+                        </motion.div>
+                        <motion.div
+                          initial={{
+                            x: 100,
+                            opacity: 0,
+                          }}
+                          whileInView={{
+                            x: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                            },
+                          }}
+                          className="col-4"
+                        >
                           Our businesses are shaping key sectors of the modern
                           economy. This creates an abundance of opportunities
                           for people to shine, learn a ton and create a massive
                           impact.
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
                   </div>
@@ -300,7 +568,7 @@ const Career = () => {
             </div>
           </div>
           {/* CurrentOpening */}
-          <div className="col-12 mt-5">
+          <div className="col-12 mt-5 py-5">
             <div className="row">
               <div
                 className="col-12 d-flex justify-content-center"

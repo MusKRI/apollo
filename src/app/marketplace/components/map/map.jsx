@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import MapImg from "./images/map.png";
+import MapImg from "./images/map2.png";
 import "./map.css";
 const HomeMap = () => {
   let Europe = [
@@ -67,11 +67,11 @@ const HomeMap = () => {
       <h1 className="text-center text-3xl lg:text-5xl py-8 font-bold">
         Making Impact Across Globe
       </h1>
-      <div style={{ background: "rgb(46,49,146)" }}>
+      <div style={{ background: "#f6f6f4" }}>
         <div className="relative h-auto lg:min-h-screen">
           <div
-            className="relative w-full h-full flex items-center justify-center bg-[#2e3192]"
-            style={{ margin: "auto", maxWidth: "80rem" }}
+            className="relative w-full h-full flex items-center justify-center bg-[#f6f6f4]"
+            style={{ margin: "auto" }}
           >
             <img src={MapImg} alt="" className="max-w-full object-cover" />
 

@@ -1,6 +1,15 @@
+import { motion } from "framer-motion";
+
 import HomeMap from "./components/map/map";
 
 import Banner from "./images/banner.jpg";
+
+import icon1 from "./images/icons/heavy-machinery-equipment-solutions.svg";
+import icon2 from "./images/icons/medical-and-surgical-equipment.svg";
+import icon3 from "./images/icons/food-and-beverages.svg";
+import icon4 from "./images/icons/consumer-goods.svg";
+import icon5 from "./images/icons/agriculture-tools-and-machinery.svg";
+import icon6 from "./images/icons/electrical-products.svg";
 
 export const MarketPlace = () => {
   let data = {
@@ -30,7 +39,7 @@ export const MarketPlace = () => {
             </div>
 
             <div className="flex flex-col gap-5">
-              <h1 className="text-white text-5xl lg:text-7xl font-semibold max-w-md">
+              <h1 className="text-white text-5xl lg:text-7xl font-semibold">
                 {data.bannerDescription}
               </h1>
 
@@ -45,16 +54,40 @@ export const MarketPlace = () => {
       {/* Section-2 */}
       <div className="container mt-4 mb-4">
         <div className="row">
-          <div className="col-6">
+          <motion.div
+            className="col-6"
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+          >
             <img
               src={data.bgImage}
               alt=""
               style={{ maxHeight: "370px", minWidth: "70%" }}
             />
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className="col-6 d-flex align-items-end"
             style={{ marginBottom: "-20px" }}
+            initial={{
+              opacity: 0,
+              x: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
           >
             <div
               className="row"
@@ -73,29 +106,126 @@ export const MarketPlace = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* section-3 */}
       <div
-        className="container-fluid mt-5 mb-5 pt-5 pb-5"
-        style={{ background: "black", color: "white" }}
+        className="container-fluid mt-5 mb-5 py-20"
+        style={{ background: "#222429", color: "white" }}
       >
-        <div className="row">
-          <div className="col-6">
-            At apollo Marketplace
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum
-              ipsam et nostrum repudiandae quibusdam, totam asperiores tempora
-              voluptatum nobis vitae, sint in.
-            </p>
+        <div className="row container mx-auto space-y-4">
+          <div className="col-6 self-center">
+            <motion.h1
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.8,
+                },
+              }}
+              className="text-3xl"
+            >
+              At apollo Marketplace
+            </motion.h1>
+            <motion.p
+              initial={{
+                opacity: 0,
+                x: -100,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.8,
+                },
+              }}
+              className="max-w-md"
+            >
+              we specialize in trading and disturbing a diverse range of
+              products across several key business verticals:
+            </motion.p>
           </div>
-          <div className="col-6">img</div>
-          <div className="col-6">img</div>
-          <div className="col-3">img</div>
-          <div className="col-3">img</div>
-          <div className="col-3">img</div>
-          <div className="col-3">img</div>
+          <div className="col-6 flex flex-row flex-wrap gap-4">
+            <div className="group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden hover:shadow-md transition">
+              <div className="relative z-[2]">
+                <img src={icon1} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">
+                Heavy Machinery & Equipment Solutions
+              </div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-100px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon1} alt="" className="" />
+              </div>
+            </div>
+            <div className="hover:shadow-md transition group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden">
+              <div className="relative z-[2]">
+                <img src={icon2} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">
+                Medical and Surgical Equipment
+              </div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-10px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon2} alt="" className="" />
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="hover:shadow-md transition group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden">
+              <div className="relative z-[2]">
+                <img src={icon3} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">Food Beverages</div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-100px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon3} alt="" className="" />
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="hover:shadow-md transition group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden">
+              <div className="relative z-[2]">
+                <img src={icon4} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">Consumer Goods</div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-100px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon4} alt="" className="" />
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="hover:shadow-md transition group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden">
+              <div className="relative z-[2]">
+                <img src={icon5} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">
+                Agriculture Tools & Machinery
+              </div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-100px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon5} alt="" className="" />
+              </div>
+            </div>
+          </div>
+          <div className="col-3">
+            <div className="hover:shadow-md transition group relative flex-1 rounded-md bg-[#1c1e22] flex flex-col justify-end gap-2 p-4 h-56 overflow-hidden">
+              <div className="relative z-[2]">
+                <img src={icon6} alt="" className="h-20" />
+              </div>
+              <div className="text-xl relative z-[2]">Electrical Products</div>
+
+              <div className="absolute z-[0] right-[-150px] bottom-[-100px] w-full opacity-30 group-hover:scale-125 transition-all">
+                <img src={icon6} alt="" className="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {/* Map */}
@@ -108,9 +238,267 @@ export const MarketPlace = () => {
               Benifits from our unmatched expertise
             </h1>
           </div>
-          <div className="row">
-            <div className="col"></div>
-          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-b flex flex-row flex-wrap [&>div]:flex-1 [&>div]:h-[500px]">
+        <div className="p-4 flex flex-col justify-center h-full border-r">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="relative"
+          >
+            <img src={icon4} alt="" className="h-20" />
+          </motion.div>
+          <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-2xl font-semibold"
+          >
+            Global Network and Partnerships:
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-lg"
+          >
+            Our extensive global network and strategic partnerships enable us to
+            connect buyers and sellers from around the world, facilitating
+            seamless trade operations.
+          </motion.p>
+        </div>
+        <div className="p-4 flex flex-col justify-center h-full border-r">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="relative"
+          >
+            <img src={icon4} alt="" className="h-20" />
+          </motion.div>
+          <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-2xl font-semibold"
+          >
+            Holistic Solutions:
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-lg"
+          >
+            Apollo Marketplace functions as a holistic trading partner,
+            presenting a diverse product portfolio spanning multiple industries.
+          </motion.p>
+        </div>
+        <div className="p-4 flex flex-col justify-center h-full border-r">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="relative"
+          >
+            <img src={icon4} alt="" className="h-20" />
+          </motion.div>
+          <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-2xl font-semibold"
+          >
+            Quality Commitment:
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-lg"
+          >
+            We uphold the highest standards of quality assurance, ensuring that
+            every product or service we provide exceeds your expectations.
+          </motion.p>
+        </div>
+        <div className="p-4 flex flex-col justify-center h-full border-r">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="relative"
+          >
+            <img src={icon4} alt="" className="h-20" />
+          </motion.div>
+          <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-2xl font-semibold"
+          >
+            Customized Collaborations:
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-lg"
+          >
+            Acknowledging the distinctiveness of every business, we prioritize
+            personalized partnerships that align with your specific needs and
+            objectives.
+          </motion.p>
+        </div>
+        <div className="p-4 flex flex-col justify-center h-full">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="relative"
+          >
+            <img src={icon4} alt="" className="h-20" />
+          </motion.div>
+          <motion.h2
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-2xl font-semibold"
+          >
+            Innovation-Centric:
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              x: -100,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                duration: 0.8,
+              },
+            }}
+            className="text-lg"
+          >
+            In an ever-evolving business landscape, we embrace innovation to
+            remain at the forefront, delivering cutting-edge solutions to our
+            clients.
+          </motion.p>
         </div>
       </div>
       {/* LastSection */}
@@ -123,14 +511,11 @@ export const MarketPlace = () => {
               </span>
               <div className="row">
                 <div className="col-lg-6">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                  est maiores odio sit suscipit dolore fugit saepe unde officiis
-                  sequi doloribus atque itaque voluptate ducimus ratione
-                  molestias ipsam, cumque beatae! Dolor voluptatem nisi quas
-                  dolorum deserunt earum ea tempora, accusamus odit suscipit
-                  dolorem dolores ut. Ex praesentium reiciendis libero odio odit
-                  exercitationem eligendi quod atque suscipit amet, tempore,
-                  inventore harum.
+                  When you choose Apollo Marketplace, you opt for a legacy-rich,
+                  globally connected partner that prioritizes your success.
+                  Discover the difference of international trade and
+                  distribution with Apollo, where excellence is not just a
+                  choice – it's the standard.
                 </div>
               </div>
               <div className="row mt-4">
@@ -138,17 +523,20 @@ export const MarketPlace = () => {
                 <div className="col-12">
                   <div className="row">
                     <div className="col-4">
-                      <p>Write Address here</p>
+                      <p>
+                        Apollo Marketplace, Apollo Towers, Plot No 20, Sector
+                        44, Gurgaon-122002, Haryana, India
+                      </p>
                     </div>
                     <div className="col-4">
                       <p style={{ fontWeight: "bold" }}>Phone</p>
-                      <p>ipsum3</p>
-                      <p>ipsum3</p>
+                      <p>(91-124) 6740100</p>
+                      <p>(91-124) 6740200</p>
                     </div>
                     <div className="col-4">
                       <p style={{ fontWeight: "bold" }}>Email</p>
-                      <p>ipsum3</p>
-                      <p>ipsum3</p>
+                      <p>info@apolloindia.com</p>
+                      <p>contact@apolloindia.com</p>
                     </div>
                   </div>
                 </div>

@@ -6,12 +6,12 @@ import "./career-banner.css";
 
 const CareerBanner = ({ data }) => {
   return (
-    <div className="relative h-[calc(100vh-72px)]">
+    <div className="relative">
       <div className="img-gradient">
         <img
-          src={data?.bannerImage}
+          src={data?.bannerImg}
           alt="Contact Banner"
-          className="h-[calc(100vh-72px)] max-w-full min-w-0 object-cover"
+          className="max-w-full min-w-0 object-cover"
         />
       </div>
 

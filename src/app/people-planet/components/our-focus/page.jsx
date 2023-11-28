@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import FocusVideo from "../../images/focus-video.png";
 
 const OurFocus = ({ data }) => {
@@ -6,10 +8,10 @@ const OurFocus = ({ data }) => {
       <div className="relative">
         <div className="absolute max-w-4xl w-full h-[460px] left-0 top-0 p-5 bg-[#eee5e2] rounded-tr-lg rounded-br-lg flex flex-col items-center">
           <div className="flex flex-row gap-8">
-            <h1 className="text-7xl font-bold">{data.title}</h1>
-            <p className="max-w-xl text-[#525252] text-lg">
+            <motion.h1 className="text-7xl font-bold">{data.title}</motion.h1>
+            <motion.p className="max-w-xl text-[#525252] text-lg">
               {data.description}
-            </p>
+            </motion.p>
           </div>
         </div>
 

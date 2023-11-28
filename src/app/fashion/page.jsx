@@ -1,8 +1,19 @@
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
 import AOEBanner from "./images/aoebanner.png";
 
 import ApproachCard1Img from "./images/arrangement.png";
 import ApproachCard2Img from "./images/leather.png";
 import ApproachCard3Img from "./images/footwear.png";
+import OutwearImg from "./images/outwear.jpeg";
+import ShirtsImg from "./images/shirts.jpeg";
+
 import Rec1 from "./images/rec1.png";
 import Rec2 from "./images/rec2.png";
 import Rec3 from "./images/rec3.png";
@@ -110,6 +121,14 @@ export const Fashion = () => {
       {
         img: ApproachCard3Img,
         data: "Footwear",
+      },
+      {
+        img: ShirtsImg,
+        data: "Shirts",
+      },
+      {
+        img: OutwearImg,
+        data: "Outwear",
       },
     ],
 
@@ -305,20 +324,38 @@ export const Fashion = () => {
               >
                 Our Approach
               </div>
-              {fashionData?.approachData?.map((item) => {
-                console.log(item.img); // Assuming 'img' property exists in each object
-                return (
-                  <div className="col-4" key={item.id}>
-                    <img src={item.img} alt="" />
-                    <p
-                      className="d-flex justify-content-center mt-2"
-                      style={{ fontWeight: "bold" }}
-                    >
-                      {item.data}
-                    </p>
-                  </div>
-                );
-              })}
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={(swiper) => console.log(swiper)}
+                navigation={true}
+                modules={[Navigation, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+              >
+                {fashionData?.approachData?.map((item) => {
+                  console.log(item.img); // Assuming 'img' property exists in each object
+                  return (
+                    <SwiperSlide key={item.id}>
+                      {({}) => (
+                        <div className="" key={item.id}>
+                          <img src={item.img} alt="" />
+                          <p
+                            className="d-flex justify-content-center mt-2"
+                            style={{ fontWeight: "bold" }}
+                          >
+                            {item.data}
+                          </p>
+                        </div>
+                      )}
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
           </div>
         </div>
